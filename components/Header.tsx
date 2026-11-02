@@ -12,7 +12,7 @@ export default function Header() {
         {/* Mobile Hamburger Button */}
         <button
           type="button"
-          className="re-menu-btn"
+          className={`re-menu-btn ${drawerOpen ? 'open' : ''}`}
           id="hamburger"
           aria-label="Toggle navigation"
           aria-expanded={drawerOpen}
@@ -54,9 +54,10 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       <nav
-        className={`re-mobile-drawer ${drawerOpen ? 'is-active' : ''}`}
+        className={`re-mobile-drawer ${drawerOpen ? 'open' : ''}`}
         id="mobileDrawer"
         aria-label="Mobile navigation"
+        style={drawerOpen ? { display: 'block', opacity: 1, pointerEvents: 'auto' } : undefined}
       >
         <ul className="re-drawer-links">
           <li><Link href="/" onClick={() => setDrawerOpen(false)} className="active">Home</Link></li>

@@ -9,7 +9,6 @@ import WhoWeAre from '@/components/WhoWeAre';
 import ConsultationBanner from '@/components/ConsultationBanner';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
-import RoomVisualizer from '@/components/RoomVisualizer';
 
 export default function HomePage() {
   return (
@@ -25,7 +24,6 @@ export default function HomePage() {
       <ConsultationBanner />
       <ContactCTA />
       <Footer />
-      <RoomVisualizer />
     </main>
   );
 }
