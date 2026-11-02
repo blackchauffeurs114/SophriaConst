@@ -32,7 +32,12 @@ export default function Header() {
 
         {/* Brand Logo & Name */}
         <Link href="/" className="re-pill-brand" aria-label="Sophria Construction Home">
-          <img src="/assets/cfr-mark.svg" alt="SophriaConst Logo" className="re-pill-brand-icon" />
+          <img
+            src="/assets/sophria-logo.png"
+            alt="Sophria Construction Logo"
+            className="re-pill-brand-icon"
+            style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+          />
           <span className="re-pill-brand-name">SophriaConst</span>
         </Link>
 

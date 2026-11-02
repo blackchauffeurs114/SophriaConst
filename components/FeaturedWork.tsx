@@ -2,104 +2,150 @@
 
 import React, { useState } from 'react';
 
-const reelsData = [
-  {
-    id: 1,
-    title: 'Luxury Kitchens',
-    sub: 'Waterfall marble & custom millwork',
-    video: '/assets/bts-kitchen.mp4',
-    poster: '/assets/bts-kitchen-poster.jpg'
-  },
-  {
-    id: 2,
-    title: 'Spa Bathrooms',
-    sub: 'Frameless glass & zero-threshold curbless',
-    video: '/assets/bts-bathroom.mp4',
-    poster: '/assets/bts-bathroom-poster.jpg'
-  },
-  {
-    id: 3,
-    title: 'Architectural Framing',
-    sub: 'Load-bearing open concept layouts',
-    video: '/assets/bts-framing.mp4',
-    poster: '/assets/bts-framing-poster.jpg'
-  },
-  {
-    id: 4,
-    title: 'Hardwood & Flooring',
-    sub: 'Precision herringbone & engineered oak',
-    video: '/assets/bts-flooring.mp4',
-    poster: '/assets/bts-flooring-poster.jpg'
-  }
-];
+interface ReelItem {
+  video: string;
+  title: string;
+  desc: string;
+}
 
 export default function FeaturedWork() {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [activeReel, setActiveReel] = useState<ReelItem | null>(null);
+
+  const openModal = (reel: ReelItem) => {
+    setActiveReel(reel);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setActiveReel(null);
+    document.body.style.overflow = '';
+  };
 
   return (
-    <section className="section section--feature section--home-compact home-offer-section" id="portfolio">
-      <div className="container">
-        <div className="section-heading">
-          <p className="eyebrow">WHAT WE OFFER</p>
-          <h2 className="section-title">Spaces That Inspire.</h2>
-          <p className="section-copy">
-            Real on-site craftsmanship captured across Ontario &amp; Vancouver.
-          </p>
-        </div>
+    <>
+      <section className="section section--feature section--home-compact home-offer-section" id="portfolio">
+        <div className="container">
+          <div className="section-heading">
+            <p className="eyebrow">WHAT WE OFFER</p>
+            <h2 className="section-title">Spaces That Inspire.</h2>
+            <p className="section-copy">Real on-site craftsmanship, chef-grade kitchens, and spa bathroom retreats.</p>
+          </div>
+          <div className="featured-work">
+            <div className="featured-work__middle">
+              {/* Group 1: Kitchen & Bath */}
+              <div className="featured-work__group">
+                <div className="featured-work__header">
+                  <div className="featured-work__header-copy">
+                    <p className="featured-work__header-label">Kitchen &amp; Bath</p>
+                    <p className="featured-work__header-note">Chef-grade kitchens &amp; custom spa retreats.</p>
+                  </div>
+                </div>
+                <div className="featured-work__reels">
+                  <div
+                    className="featured-work__tile featured-work__tile--reel"
+                    onClick={() => openModal({
+                      video: '/assets/bts-kitchen.mp4',
+                      title: 'Kitchen Remodel',
+                      desc: 'Custom cabinetry, quartz waterfall island & chef-grade finishes.'
+                    })}
+                  >
+                    <div className="media-shell" style={{ aspectRatio: '9 / 16' }}>
+                      <video src="/assets/bts-kitchen.mp4" className="featured-work__tile-asset" autoPlay loop playsInline preload="metadata" muted></video>
+                    </div>
+                    <div className="featured-work__tile-overlay"></div>
+                    <div className="featured-work__tile-cta">
+                      <button type="button" className="featured-work__tile-button">Watch Full</button>
+                    </div>
+                  </div>
+                  <div
+                    className="featured-work__tile featured-work__tile--reel"
+                    onClick={() => openModal({
+                      video: '/assets/bts-bathroom.mp4',
+                      title: 'Spa Bathroom',
+                      desc: 'Curbless walk-in showers, freestanding tubs & Italian porcelain tile.'
+                    })}
+                  >
+                    <div className="media-shell" style={{ aspectRatio: '9 / 16' }}>
+                      <video src="/assets/bts-bathroom.mp4" className="featured-work__tile-asset" autoPlay loop playsInline preload="metadata" muted></video>
+                    </div>
+                    <div className="featured-work__tile-overlay"></div>
+                    <div className="featured-work__tile-cta">
+                      <button type="button" className="featured-work__tile-button">Watch Full</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-        <div className="featured-work__reels-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
-          {reelsData.map((item) => (
-            <div
-              key={item.id}
-              className="featured-work__tile"
-              onClick={() => setActiveVideo(item.video)}
-              style={{ cursor: 'pointer', borderRadius: '18px', overflow: 'hidden', position: 'relative', background: '#0a0f1d', border: '1px solid rgba(255,255,255,0.08)' }}
-            >
-              <div style={{ aspectRatio: '9/16', position: 'relative' }}>
-                <video
-                  src={item.video}
-                  poster={item.poster}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(4,7,12,0.85) 0%, transparent 60%)' }} />
-                <div style={{ position: 'absolute', bottom: '1.2rem', left: '1.2rem', right: '1.2rem' }}>
-                  <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 800, color: '#fff' }}>{item.title}</h3>
-                  <p style={{ margin: '0.3rem 0 0', fontSize: '0.82rem', color: '#9ba6b8' }}>{item.sub}</p>
+              {/* Group 2: Flooring & Framing */}
+              <div className="featured-work__group">
+                <div className="featured-work__header">
+                  <div className="featured-work__header-copy">
+                    <p className="featured-work__header-label">Flooring &amp; Framing</p>
+                    <p className="featured-work__header-note">Precision hardwood &amp; structural transformations.</p>
+                  </div>
+                </div>
+                <div className="featured-work__trust">
+                  <div
+                    className="featured-work__tile featured-work__tile--reel"
+                    onClick={() => openModal({
+                      video: '/assets/bts-flooring.mp4',
+                      title: 'Hardwood & Flooring',
+                      desc: 'Engineered hardwood, custom vinyl plank & precision tile installations.'
+                    })}
+                  >
+                    <div className="media-shell" style={{ aspectRatio: '9 / 16' }}>
+                      <video src="/assets/bts-flooring.mp4" className="featured-work__tile-asset" autoPlay loop playsInline preload="metadata" muted></video>
+                    </div>
+                    <div className="featured-work__tile-overlay"></div>
+                    <div className="featured-work__tile-cta">
+                      <button type="button" className="featured-work__tile-button">Watch Full</button>
+                    </div>
+                  </div>
+                  <div
+                    className="featured-work__tile featured-work__tile--reel"
+                    onClick={() => openModal({
+                      video: '/assets/bts-framing.mp4',
+                      title: 'Structural Framing',
+                      desc: 'Complete layout reconfigurations, load-bearing removal & framing.'
+                    })}
+                  >
+                    <div className="media-shell" style={{ aspectRatio: '9 / 16' }}>
+                      <video src="/assets/bts-framing.mp4" className="featured-work__tile-asset" autoPlay loop playsInline preload="metadata" muted></video>
+                    </div>
+                    <div className="featured-work__tile-overlay"></div>
+                    <div className="featured-work__tile-cta">
+                      <button type="button" className="featured-work__tile-button">Watch Full</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Video Modal */}
-      {activeVideo && (
+      {/* Lightbox Video Player Modal */}
+      {activeReel && (
         <div
-          className="re-modal is-open"
-          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.88)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          onClick={() => setActiveVideo(null)}
+          className="featured-work-preview is-open"
+          id="reMediaPreview"
+          role="dialog"
+          aria-modal="true"
+          onClick={closeModal}
         >
-          <div style={{ maxWidth: '420px', width: '90%', position: 'relative' }} onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setActiveVideo(null)}
-              style={{ position: 'absolute', top: '-40px', right: '0', background: 'none', border: 'none', color: '#fff', fontSize: '2rem', cursor: 'pointer' }}
-            >
-              ✕
-            </button>
-            <video
-              src={activeVideo}
-              autoPlay
-              controls
-              playsInline
-              style={{ width: '100%', borderRadius: '16px', boxShadow: '0 20px 60px rgba(0,0,0,0.8)' }}
-            />
+          <div className="featured-work-preview__panel featured-work-preview__panel--portrait" onClick={(e) => e.stopPropagation()}>
+            <div className="featured-work-preview__head">
+              <p className="featured-work-preview__eyebrow" id="reMediaPreviewEyebrow">{activeReel.title.toUpperCase()}</p>
+              <button type="button" className="featured-work-preview__close" onClick={closeModal} aria-label="Close modal">
+                Close &times;
+              </button>
+            </div>
+            <div className="featured-work-preview__stage featured-work-preview__stage--portrait">
+              <video id="reMediaPreviewVideo" className="featured-work-preview__media" controls autoPlay playsInline src={activeReel.video}></video>
+            </div>
           </div>
         </div>
       )}
-    </section>
+    </>
   );
 }
