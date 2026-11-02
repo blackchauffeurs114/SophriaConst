@@ -30,15 +30,14 @@ export default function Header() {
           <Link href="/projects" className="re-nav-link">Projects</Link>
         </nav>
 
-        {/* Brand Logo & Name */}
+        {/* Center Brand: Only Client Logo (No Extra Text) */}
         <Link href="/" className="re-pill-brand" aria-label="Sophria Construction Home">
           <img
             src="/assets/sophria-logo.png"
-            alt="Sophria Construction Logo"
+            alt="Sophria Construction"
             className="re-pill-brand-icon"
-            style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+            style={{ height: '36px', width: 'auto', objectFit: 'contain', display: 'block' }}
           />
-          <span className="re-pill-brand-name">SophriaConst</span>
         </Link>
 
         {/* Desktop Nav Right */}
