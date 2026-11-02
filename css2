@@ -1,0 +1,56 @@
+﻿@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUt9_-1phKLFgshYDvh6Vwt7V9tuA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUo9_-1phKLFgshYDvh6Vwt7V9VTE52jg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUu9_-1phKLFgshYDvh6Vwt5fFPmE0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUz9_-1phKLFgshYDvh6Vwt3V0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUu9_-1phKLFgshYDvh6Vwt5alOmE0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUu9_-1phKLFgshYDvh6Vwt5eFImE0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(s/alegreyasans/v28/5aUu9_-1phKLFgshYDvh6Vwt5dlKmE0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Didact Gothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/didactgothic/v21/ahcfv8qz1zt6hCC5G4F_P4ASpUw.ttf) format('truetype');
+}
