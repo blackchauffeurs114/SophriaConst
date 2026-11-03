@@ -291,7 +291,7 @@ export default function Header() {
         <nav className="re-nav-desktop re-nav-desktop--right" aria-label="Secondary navigation">
           <Link href="/about" className="re-nav-link">About</Link>
           <Link href="/contact" className="re-nav-link">Contact</Link>
-          <Link href="/estimate" className="re-nav-btn">Free Quote</Link>
+          <Link href="/estimate" className="re-nav-btn">Get Estimate</Link>
         </nav>
 
         {/* Mobile Spacer */}
@@ -360,12 +360,12 @@ export default function Header() {
 
           <li><Link href="/projects" onClick={() => setDrawerOpen(false)}>Projects</Link></li>
           <li><Link href="/about" onClick={() => setDrawerOpen(false)}>About</Link></li>
-          <li><Link href="/estimate" onClick={() => setDrawerOpen(false)}>Get a Quote</Link></li>
+          <li><Link href="/estimate" onClick={() => setDrawerOpen(false)}>Get Estimate</Link></li>
           <li><Link href="/contact" onClick={() => setDrawerOpen(false)}>Contact</Link></li>
         </ul>
         <div className="re-drawer-cta">
           <a href="tel:+14376054750" className="re-drawer-call">+1 (437) 605-4750</a>
-          <Link href="/estimate" onClick={() => setDrawerOpen(false)} className="re-drawer-quote">Get a Free Quote</Link>
+          <Link href="/estimate" onClick={() => setDrawerOpen(false)} className="re-drawer-quote">Get Estimate</Link>
         </div>
       </nav>
     </header>
