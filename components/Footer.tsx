@@ -11,12 +11,9 @@ export default function Footer() {
               <img
                 src="/assets/sophria-logo.png"
                 alt="Sophria Construction"
-                style={{ height: '48px', width: 'auto', objectFit: 'contain', display: 'block', marginBottom: '18px' }}
+                style={{ height: '56px', width: 'auto', objectFit: 'contain', display: 'block' }}
               />
             </Link>
-            <p>
-              Vancouver&apos;s premier luxury renovation and master flooring crew. We turn tired spaces into architectural living environments &mdash; on time, on budget, and built to the highest standard.
-            </p>
           </div>
 
           <div>
@@ -55,9 +52,11 @@ export default function Footer() {
 
         <div className="foot-bottom">
           <p>&copy; {new Date().getFullYear()} Sophria Construction. All rights reserved.</p>
-          <div className="foot-links">
+          <div className="foot-links" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
             <Link href="/services">Services</Link>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>&middot;</span>
             <Link href="/estimate">Free Quote</Link>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>&middot;</span>
             <Link href="/contact">Contact</Link>
           </div>
         </div>
