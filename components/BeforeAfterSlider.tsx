@@ -95,7 +95,7 @@ export default function BeforeAfterSlider() {
               textTransform: 'uppercase',
             }}
           >
-            Main-Floor Living &amp; Open-Staircase Renovation &bull; Vancouver &amp; Ontario
+            Main-Floor Living &amp; Open-Staircase Renovation &bull; Mississauga &amp; Ontario
           </p>
         </div>
       </div>

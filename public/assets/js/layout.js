@@ -58,7 +58,7 @@
         '<nav class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">' +
           '<ul class="mobile-drawer__links">' + links + '</ul>' +
           '<div class="mobile-drawer__cta">' +
-            '<a href="tel:6047394477" class="button button-outline mobile-drawer__call">📞 (604) 739-4477</a>' +
+            '<a href="tel:14376054750" class="button button-outline mobile-drawer__call">📞 +1 (437) 605-4750</a>' +
             '<a href="contact.html" class="button button-accent mobile-drawer__quote">Get a Free Quote</a>' +
           '</div>' +
         '</nav>';
@@ -87,7 +87,7 @@
           '<div class="foot-brand">' +
             '<a class="brand" href="index.html"><img src="assets/cfr-mark.svg" alt="SophriaConst logo">' +
             '<span class="wordmark grad-silver">SophriaConst<small>Flooring · Kitchens · Bathrooms</small></span></a>' +
-            '<p>Vancouver\'s premier luxury renovation and flooring crew. We turn tired rooms into the reason you rush home — on time, on budget, and built to be stared at.</p>' +
+            '<p>Mississauga, Ontario\'s premier luxury renovation and flooring crew. We turn tired rooms into the reason you rush home — on time, on budget, and built to be stared at.</p>' +
             '<span class="script" style="font-size:1.6rem">Building Better Spaces</span>' +
           '</div>' +
           '<div><h4>Explore</h4><ul>' +
@@ -113,14 +113,8 @@
             '<li><a href="bathroom-renovation-cost-toronto.html">Bathroom Cost Guide</a></li>' +
           '</ul></div>' +
           '<div><h4>Get in touch</h4><ul class="foot-contact">' +
-            '<li><b>Phone </b><a href="tel:6047394477">(604) 739-4477</a></li>' +
-            '<li><b>Email </b><a href="mailto:info@canadianflooringrenovations.ca">info@canadianflooringrenovations.ca</a></li>' +
-            '<li><b>Showroom </b><span>Unit 260 – 1916 West Broadway, Vancouver, BC</span></li>' +
-            '<li><b>Hours </b><span>Mon–Fri, 9:00am–5:30pm · Sat, 10am–4pm</span></li>' +
-            '<li><b>Areas </b><span>Vancouver &amp; Metro · Burnaby · Richmond · North &amp; West Van · Surrey</span></li>' +
-          '</ul></div>' +
-        '</div>' +
-        '<div class="foot-bottom">' +
+            '<li><b>Phone </b><a href="tel:14376054750">+1 (437) 605-4750</a></li>' +
+            '<li><b>Email </b><a href="mailto:estimating@sophria.ca">estimating@sophria.ca"foot-bottom">' +
           '<span>© 2026 Sophria Construction. All rights reserved.</span>' +
           '<span class="script">Building Better Spaces</span>' +
           '<span>Licensed &amp; insured · 1-year craftsmanship warranty · Since 1999</span>' +

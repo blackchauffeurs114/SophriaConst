@@ -3,195 +3,309 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ConsultationBanner from '@/components/ConsultationBanner';
+import { flooringList, renovationList } from '@/data/servicesData';
 
 export const metadata = {
-  title: 'Luxury Renovation & Master Flooring Services | Sophria Construction',
-  description: 'Full-scope design-build services across Vancouver & Ontario — kitchens, spa bathrooms, hardwood flooring, basements, and custom stonework.',
+  title: 'Commercial Flooring Systems & Luxury Renovations | Sophria Private Limited',
+  description: 'Sourcing, installing and repairing terrazzo, tile, stone, resilient flooring and luxury residential renovations across Mississauga and Ontario for over 25 years.',
 };
-
-const servicesList = [
-  {
-    id: 'kitchen',
-    num: '01',
-    title: 'Kitchen Remodeling',
-    tagline: 'Chef-grade layouts, bespoke cabinetry & waterfall quartz.',
-    desc: 'The kitchen is the center of your home. We craft chef-inspired culinary spaces with floor-to-ceiling custom millwork, integrated smart appliances, soft-close hardware, and precision waterfall island counters built to withstand a lifetime of entertaining.',
-    img: '/assets/service-kitchen.jpg',
-    features: [
-      'Custom architectural cabinetry & soft-close hardware',
-      'Waterfall quartz & quartzite stone islands',
-      'Under-cabinet LED task lighting & smart outlets',
-      'Plumbing, gas line re-routing & electrical upgrades',
-      'Designer tile backsplashes & hidden walk-in pantries'
-    ]
-  },
-  {
-    id: 'bathroom',
-    num: '02',
-    title: 'Bathroom Renovations',
-    tagline: 'Spa-grade sanctuary design, curbless showers & freestanding tubs.',
-    desc: 'Transform dated bathrooms into serene, five-star luxury retreats. From Schluter-certified waterproof curbless walk-in showers with linear drains to heated porcelain floors, rainfall shower heads, and floating custom double vanities.',
-    img: '/assets/service-bathroom.jpg',
-    features: [
-      'Zero-threshold curbless walk-in showers with linear drains',
-      '10mm frameless architectural tempered glass enclosures',
-      'Electric in-floor radiant heating with smart digital thermostats',
-      'Deep freestanding acrylic & stone soaking tubs',
-      'Full Schluter-Kerdi waterproof backing guarantee'
-    ]
-  },
-  {
-    id: 'flooring',
-    num: '03',
-    title: 'Hardwood & Luxury Flooring',
-    tagline: 'Precision engineered oak, herringbone patterns & luxury vinyl.',
-    desc: 'Master flooring is the foundation of every great room. We supply and install premium European white oak engineered hardwood, bespoke herringbone patterns, and 100% waterproof luxury vinyl plank (SPC) — installed laser-level and guaranteed silent underfoot.',
-    img: '/assets/service-flooring.jpg',
-    features: [
-      'Wide-plank European white oak engineered hardwood',
-      'Classic French herringbone & chevron architectural layouts',
-      'High-traffic waterproof SPC luxury vinyl plank with acoustic underlayment',
-      'Subfloor leveling, soundproofing & silent-walk membrane system',
-      'Custom stained stair treads, risers, and flush-mount vents'
-    ]
-  },
-  {
-    id: 'basement',
-    num: '04',
-    title: 'Basement Finishing',
-    tagline: 'Legal secondary rental suites, home theaters & living spaces.',
-    desc: 'Unlock your lower level’s true square footage and market value. We handle complete basement conversions from structural framing, sub-slab plumbing, spray foam moisture insulation, egress windows, to self-contained rental suites and entertainment bars.',
-    img: '/assets/service-basement.jpg',
-    features: [
-      'Full city permit management & Ontario / BC Building Code compliance',
-      'Soundproofing ceiling channels & Roxul Safe’n’Sound insulation',
-      'Custom wet bars, media lounges & climate-controlled wine displays',
-      'Legal separate exterior walkout entrances (below grade)',
-      'High-efficiency sub-slab moisture barrier and sump systems'
-    ]
-  },
-  {
-    id: 'stone',
-    num: '05',
-    title: 'Quartz & Quartzite Stonework',
-    tagline: 'Bookmatched slabs, mitered edges & seamless backsplashes.',
-    desc: 'Elevate your interior surfaces with premium engineered quartz and natural quartzite. Fabricated with CNC laser precision to ensure hairline seams, seamless bookmatched veining, and 2-inch mitered island edges that command immediate attention.',
-    img: '/assets/service-stone.jpg',
-    features: [
-      'Bookmatched natural quartzite & luxury engineered quartz slabs',
-      'Seamless 2-inch and 3-inch mitered waterfall island drops',
-      'Full-height stone wall cladding and fireplace hearth surrounds',
-      'Undermount sink laser cutouts with polished drainboard grooves',
-      'Stain-resistant sealer treatments and lifetime fabrication warranty'
-    ]
-  },
-  {
-    id: 'addition',
-    num: '06',
-    title: 'Full-Home Renovations & Additions',
-    tagline: 'Open-concept reconfigurations & structural expansions.',
-    desc: 'From removing load-bearing walls and installing steel flush beams to multi-room full gut renovations and rear house extensions. One accountable crew owns the architecture, city permits, engineering inspections, and master finishes.',
-    img: '/assets/service-addition.jpg',
-    features: [
-      'Structural steel beam installation & load-bearing wall removal',
-      'Rear house extensions & sunroom additions',
-      'HVAC, 200-amp panel upgrades & whole-home rewiring',
-      'Architectural plans, 3D renderings & municipal permits',
-      'Single point of accountability from demolition to final cleaning'
-    ]
-  }
-];
 
 export default function ServicesPage() {
   return (
-    <main>
+    <main style={{ background: '#05080d', color: '#fff', minHeight: '100vh' }}>
       <Header />
 
-      {/* Hero Header */}
-      <section style={{ padding: '160px 1.5rem 70px', background: 'linear-gradient(180deg, #040813 0%, #081024 100%)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ maxWidth: '840px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <span style={{ color: '#83c0ff', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.22em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>
-            WHAT WE DO
+      {/* Page Hero */}
+      <section
+        style={{
+          padding: '160px 1.5rem 80px',
+          background: 'radial-gradient(circle at 50% 10%, rgba(20, 45, 95, 0.45) 0%, rgba(5, 8, 13, 0.98) 70%)',
+          textAlign: 'center',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        }}
+      >
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <span
+            style={{
+              color: '#83c0ff',
+              fontSize: '0.82rem',
+              fontWeight: 800,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '1rem',
+            }}
+          >
+            OUR EXPERTISE &middot; MISSISSAUGA &amp; ONTARIO
           </span>
-          <h1 style={{ color: '#fff', fontSize: 'clamp(34px, 5.5vw, 64px)', fontWeight: 900, fontFamily: "'kaleko', var(--font-display), sans-serif", letterSpacing: '-0.04em', lineHeight: '1.05', margin: '0 0 1.25rem' }}>
-            Master Craftsmanship Across Every Square Foot.
+
+          <h1
+            style={{
+              color: '#fff',
+              fontSize: 'clamp(36px, 6vw, 64px)',
+              fontWeight: 900,
+              fontFamily: "'kaleko', sans-serif",
+              letterSpacing: '-0.04em',
+              lineHeight: '1.05',
+              marginBottom: '1.5rem',
+            }}
+          >
+            Master Craftsmanship <br />
+            <span style={{ background: 'linear-gradient(135deg, #60a5fa 0%, #38bdf8 60%, #93c5fd 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Across Every Square Foot.
+            </span>
           </h1>
-          <p style={{ color: '#9ba6b8', fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '44rem', margin: '0 auto 2rem' }}>
-            One dedicated in-house design-build team for luxury kitchens, spa bathrooms, master flooring, and structural home transformations across Vancouver &amp; Ontario.
+
+          <p
+            style={{
+              color: '#9ba6b8',
+              fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+              lineHeight: '1.7',
+              maxWidth: '46rem',
+              margin: '0 auto 2.5rem',
+            }}
+          >
+            Sophria Private Limited &mdash; sourcing, installing and repairing specialized commercial flooring systems and turnkey residential renovations across Ontario for over 25 years.
           </p>
+
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/estimate" className="re-hero-btn re-hero-btn--accent" style={{ padding: '14px 32px' }}>
-              Get a Free Quote
+            <Link href="/estimate" className="bts-cta-btn" style={{ padding: '15px 36px', fontSize: '0.95rem' }}>
+              GET A FREE ESTIMATE
             </Link>
-            <a href="tel:6047394477" className="re-hero-btn re-hero-btn--outline" style={{ padding: '14px 32px' }}>
-              Call (604) 739-4477
+            <a
+              href="tel:+14376054750"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '15px 32px',
+                borderRadius: '50px',
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.16)',
+                color: '#fff',
+                fontWeight: 700,
+                fontSize: '0.95rem',
+                textDecoration: 'none',
+              }}
+            >
+              CALL (437) 605-4750
             </a>
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section style={{ padding: '80px 1.5rem 100px', background: '#050a17' }}>
-        <div className="container" style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
-            {servicesList.map((svc, idx) => (
-              <div
-                key={svc.id}
-                id={`service-${svc.id}`}
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                  gap: '40px',
-                  alignItems: 'center',
-                  background: 'rgba(11, 20, 42, 0.65)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '24px',
-                  padding: 'clamp(24px, 4vw, 44px)',
-                  boxShadow: '0 24px 60px rgba(0,0,0,0.4)'
-                }}
-              >
-                {/* Media (left on odd, right on even on desktop) */}
-                <div style={{ order: idx % 2 === 1 ? 2 : 1, position: 'relative', borderRadius: '18px', overflow: 'hidden', aspectRatio: '16/11', border: '1px solid rgba(131, 192, 255, 0.15)' }}>
+      {/* SECTION 1: SPECIALIZED COMMERCIAL FLOORING SYSTEMS */}
+      <section style={{ padding: '90px 1.5rem 60px', maxWidth: '1240px', margin: '0 auto' }}>
+        <div style={{ marginBottom: '50px' }}>
+          <span
+            style={{
+              color: '#83c0ff',
+              fontSize: '0.82rem',
+              fontWeight: 800,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              display: 'block',
+              marginBottom: '0.75rem',
+            }}
+          >
+            CORE SPECIALTY &middot; 25+ YEARS
+          </span>
+          <h2
+            style={{
+              fontSize: 'clamp(28px, 4vw, 44px)',
+              fontWeight: 800,
+              fontFamily: "'kaleko', sans-serif",
+              letterSpacing: '-0.03em',
+              margin: '0 0 1rem',
+            }}
+          >
+            Specialized Commercial &amp; Resilient Flooring Systems
+          </h2>
+          <p style={{ color: '#9ba6b8', fontSize: '1.05rem', lineHeight: '1.65', maxWidth: '44rem', margin: 0 }}>
+            Precision subfloor preparation, professional supply, certified installation, and diamond grinding repairs across Ontario.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
+          {flooringList.map((svc, idx) => (
+            <div
+              key={svc.slug}
+              style={{
+                background: 'linear-gradient(160deg, rgba(16, 28, 58, 0.75), rgba(8, 15, 34, 0.65))',
+                border: '1px solid rgba(156, 194, 251, 0.2)',
+                borderRadius: '20px',
+                overflow: 'hidden',
+                boxShadow: '0 20px 45px rgba(0,0,0,0.5)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>
+                <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
                   <img
-                    src={svc.img}
+                    src={svc.image}
                     alt={svc.title}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
-                  <div style={{ position: 'absolute', top: '16px', left: '16px', background: 'rgba(6, 12, 26, 0.85)', backdropFilter: 'blur(10px)', padding: '6px 14px', borderRadius: '999px', border: '1px solid rgba(131,192,255,0.3)', color: '#83c0ff', fontWeight: 800, fontSize: '0.85rem' }}>
-                    SERVICE {svc.num}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '12px',
+                      left: '12px',
+                      background: 'rgba(5, 10, 22, 0.85)',
+                      backdropFilter: 'blur(8px)',
+                      padding: '4px 12px',
+                      borderRadius: '999px',
+                      border: '1px solid rgba(131, 192, 255, 0.3)',
+                      color: '#83c0ff',
+                      fontSize: '0.75rem',
+                      fontWeight: 800,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    0{idx + 1} &middot; Flooring System
                   </div>
                 </div>
 
-                {/* Content */}
-                <div style={{ order: idx % 2 === 1 ? 1 : 2 }}>
-                  <span style={{ color: '#83c0ff', fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                    {svc.tagline}
-                  </span>
-                  <h2 style={{ color: '#fff', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 800, margin: '0 0 16px', fontFamily: "'kaleko', sans-serif", letterSpacing: '-0.03em' }}>
+                <div style={{ padding: '28px 24px 20px' }}>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '10px', color: '#fff' }}>
                     {svc.title}
-                  </h2>
-                  <p style={{ color: '#a6b4c9', fontSize: '1.02rem', lineHeight: '1.65', marginBottom: '24px' }}>
-                    {svc.desc}
+                  </h3>
+                  <p style={{ color: '#cbd5e1', fontSize: '0.94rem', lineHeight: '1.6', marginBottom: '18px' }}>
+                    {svc.lead}
                   </p>
 
-                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 28px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {svc.features.map((feat, fIdx) => (
-                      <li key={fIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', color: '#e2e8f0', fontSize: '0.94rem', lineHeight: '1.5' }}>
-                        <span style={{ color: '#38bdf8', fontWeight: 900, marginTop: '1px' }}>✓</span>
-                        <span>{feat}</span>
-                      </li>
+                  {/* Specs Pill List */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '18px', background: 'rgba(5, 10, 22, 0.45)', padding: '12px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)' }}>
+                    {svc.specs.slice(0, 4).map((spec, sIdx) => (
+                      <div key={sIdx} style={{ fontSize: '0.8rem' }}>
+                        <span style={{ color: '#64748b', display: 'block' }}>{spec.label}</span>
+                        <span style={{ color: '#e2e8f0', fontWeight: 700 }}>{spec.value}</span>
+                      </div>
                     ))}
-                  </ul>
-
-                  <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                    <Link
-                      href="/estimate"
-                      className="bts-cta-btn"
-                      style={{ padding: '12px 26px', fontSize: '0.92rem' }}
-                    >
-                      Get a Quote for {svc.title} &rarr;
-                    </Link>
                   </div>
+                </div>
+              </div>
+
+              <div style={{ padding: '0 24px 24px' }}>
+                <Link
+                  href={`/services/${svc.slug}`}
+                  className="bts-cta-btn"
+                  style={{ width: '100%', padding: '12px', fontSize: '0.88rem', display: 'block', textAlign: 'center' }}
+                >
+                  VIEW SYSTEM DETAILS &rarr;
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SECTION 2: ARCHITECTURAL RENOVATION SERVICES */}
+      <section style={{ padding: '80px 1.5rem 100px', background: 'rgba(8, 15, 34, 0.55)', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          <div style={{ marginBottom: '50px' }}>
+            <span
+              style={{
+                color: '#83c0ff',
+                fontSize: '0.82rem',
+                fontWeight: 800,
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                display: 'block',
+                marginBottom: '0.75rem',
+              }}
+            >
+              DESIGN &middot; BUILD &middot; TRANSFORM
+            </span>
+            <h2
+              style={{
+                fontSize: 'clamp(28px, 4vw, 44px)',
+                fontWeight: 800,
+                fontFamily: "'kaleko', sans-serif",
+                letterSpacing: '-0.03em',
+                margin: '0 0 1rem',
+              }}
+            >
+              Full-Scope Residential Renovations
+            </h2>
+            <p style={{ color: '#9ba6b8', fontSize: '1.05rem', lineHeight: '1.65', maxWidth: '44rem', margin: 0 }}>
+              Turnkey architectural project management from permit acquisition and structural engineering to luxury bespoke finishes.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
+            {renovationList.map((svc, idx) => (
+              <div
+                key={svc.slug}
+                style={{
+                  background: 'linear-gradient(160deg, rgba(16, 28, 58, 0.75), rgba(8, 15, 34, 0.65))',
+                  border: '1px solid rgba(156, 194, 251, 0.2)',
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                  boxShadow: '0 20px 45px rgba(0,0,0,0.5)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div>
+                  <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                    <img
+                      src={svc.image}
+                      alt={svc.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '12px',
+                        left: '12px',
+                        background: 'rgba(5, 10, 22, 0.85)',
+                        backdropFilter: 'blur(8px)',
+                        padding: '4px 12px',
+                        borderRadius: '999px',
+                        border: '1px solid rgba(131, 192, 255, 0.3)',
+                        color: '#83c0ff',
+                        fontSize: '0.75rem',
+                        fontWeight: 800,
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                      }}
+                    >
+                      Renovation &middot; 0{idx + 1}
+                    </div>
+                  </div>
+
+                  <div style={{ padding: '28px 24px 20px' }}>
+                    <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '10px', color: '#fff' }}>
+                      {svc.title}
+                    </h3>
+                    <p style={{ color: '#cbd5e1', fontSize: '0.94rem', lineHeight: '1.6', marginBottom: '18px' }}>
+                      {svc.lead}
+                    </p>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '18px', background: 'rgba(5, 10, 22, 0.45)', padding: '12px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.06)' }}>
+                      {svc.specs.slice(0, 4).map((spec, sIdx) => (
+                        <div key={sIdx} style={{ fontSize: '0.8rem' }}>
+                          <span style={{ color: '#64748b', display: 'block' }}>{spec.label}</span>
+                          <span style={{ color: '#e2e8f0', fontWeight: 700 }}>{spec.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ padding: '0 24px 24px' }}>
+                  <Link
+                    href={`/services/${svc.slug}`}
+                    className="bts-cta-btn"
+                    style={{ width: '100%', padding: '12px', fontSize: '0.88rem', display: 'block', textAlign: 'center' }}
+                  >
+                    EXPLORE SERVICE &rarr;
+                  </Link>
                 </div>
               </div>
             ))}

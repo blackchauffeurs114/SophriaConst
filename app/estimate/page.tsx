@@ -279,7 +279,7 @@ export default function EstimatePage() {
               <div style={{ background: 'rgba(34, 197, 94, 0.12)', border: '1px solid rgba(34, 197, 94, 0.35)', borderRadius: '14px', padding: '24px', textAlign: 'center' }}>
                 <h4 style={{ color: '#86efac', fontSize: '1.25rem', fontWeight: 800, marginBottom: '6px' }}>Estimate Saved &amp; Request Sent!</h4>
                 <p style={{ color: '#cbd5e1', fontSize: '0.94rem', margin: 0 }}>
-                  We have logged your ${calculatedCost.low.toLocaleString()} &ndash; ${calculatedCost.high.toLocaleString()} CAD estimate. Our Vancouver team will reach out within 24 hours to arrange your onsite measure.
+                  We have logged your ${calculatedCost.low.toLocaleString()} &ndash; ${calculatedCost.high.toLocaleString()} CAD estimate. Our Mississauga, Ontario team will reach out within 24 hours to arrange your onsite measure.
                 </p>
               </div>
             ) : (

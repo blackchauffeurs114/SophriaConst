@@ -3,8 +3,8 @@ import './globals.css';
 import ScrollEffects from '@/components/ScrollEffects';
 
 export const metadata: Metadata = {
-  title: 'Sophria Construction | Luxury Renovations & Flooring Vancouver & Ontario',
-  description: 'Sophria Construction is an Ontario and Vancouver-based design-build firm specializing in high-end residential renovations and commercial transformations.',
+  title: 'Sophria Private Limited | Commercial Flooring & Luxury Renovations Mississauga & Ontario',
+  description: 'Sophria Private Limited — Sourcing, installing and repairing terrazzo, tile, stone, resilient flooring and luxury renovations across Mississauga and Ontario for over 25 years.',
   icons: {
     icon: '/assets/favicon-32.png',
     apple: '/assets/favicon-180.png',

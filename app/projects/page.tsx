@@ -6,8 +6,8 @@ import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import ConsultationBanner from '@/components/ConsultationBanner';
 
 export const metadata = {
-  title: 'Completed Renovation & Flooring Projects | Sophria Construction',
-  description: 'Explore our portfolio of completed luxury kitchen remodels, spa bathrooms, hardwood flooring, and home additions across Vancouver & Ontario.',
+  title: 'Completed Renovation & Flooring Projects | Sophria Private Limited',
+  description: 'Explore our portfolio of completed luxury kitchen remodels, spa bathrooms, commercial flooring systems, and home additions across Mississauga & Ontario.',
 };
 
 const projectsList = [
@@ -21,14 +21,14 @@ const projectsList = [
   {
     title: 'Spa Ensuite & Walk-In Glass Retreat',
     category: 'Bathroom Renovation',
-    location: 'Vancouver, BC',
+    location: 'Mississauga, ON',
     img: '/assets/img/projects/danforth-shower.jpg',
     desc: 'Schluter-certified curbless walk-in shower with matte black fixtures, floating vanity with dual undermount sinks, and Italian porcelain slab tiles.'
   },
   {
     title: 'Laneway Home & Interior Addition',
     category: 'Full Home Transformation',
-    location: 'Vancouver, BC',
+    location: 'Burlington, ON',
     img: '/assets/img/projects/laneway-hero.jpg',
     desc: 'Complete ground-up secondary dwelling transformation maximizing every inch of space with open-concept architecture and silent engineered oak.'
   },
@@ -42,7 +42,7 @@ const projectsList = [
   {
     title: 'Mochi Commercial & Boutique Space',
     category: 'Commercial & Retail',
-    location: 'Downtown Vancouver',
+    location: 'Downtown Toronto, ON',
     img: '/assets/img/projects/mochi-td-interior-1.jpg',
     desc: 'High-traffic commercial storefront transformation with bespoke display millwork, durable epoxy and commercial-grade vinyl plank flooring.'
   },

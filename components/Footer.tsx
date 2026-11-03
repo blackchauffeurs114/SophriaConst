@@ -10,50 +10,57 @@ export default function Footer() {
             <Link className="brand" href="/" aria-label="Sophria Construction Home">
               <img
                 src="/assets/sophria-logo.png"
-                alt="Sophria Construction"
-                style={{ height: '56px', width: 'auto', objectFit: 'contain', display: 'block' }}
+                alt="Sophria Private Limited"
+                style={{ height: '56px', width: 'auto', objectFit: 'contain', display: 'block', marginBottom: '16px' }}
               />
             </Link>
+            <p style={{ color: '#9ba6b8', fontSize: '0.92rem', lineHeight: '1.65', maxWidth: '320px' }}>
+              Sophria Private Limited &mdash; sourcing, installing and repairing terrazzo, tile, stone, resilient flooring and bespoke residential renovations across Mississauga and Ontario for over 25 years.
+            </p>
           </div>
 
           <div>
-            <h4>Explore</h4>
+            <h4>Systems &amp; Flooring</h4>
             <ul>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/services">Services</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/estimate">Instant Estimate</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/services/terrazzo">Terrazzo Flooring</Link></li>
+              <li><Link href="/services/vct">VCT Flooring</Link></li>
+              <li><Link href="/services/carpet-tile">Carpet Tile Flooring</Link></li>
+              <li><Link href="/services/rubber">Rubber Flooring</Link></li>
+              <li><Link href="/services/sheet-vinyl">Sheet Vinyl</Link></li>
+              <li><Link href="/services/epoxy">Epoxy Flooring</Link></li>
             </ul>
           </div>
 
           <div>
             <h4>Renovations</h4>
             <ul>
-              <li><Link href="/services#service-kitchen">Kitchen Remodeling</Link></li>
-              <li><Link href="/services#service-bathroom">Bathroom Renovations</Link></li>
-              <li><Link href="/services#service-basement">Basement Finishing</Link></li>
-              <li><Link href="/services#service-flooring">Hardwood &amp; Luxury Flooring</Link></li>
-              <li><Link href="/services#service-stone">Quartz &amp; Quartzite Stonework</Link></li>
+              <li><Link href="/services/kitchen-remodeling">Kitchen Remodeling</Link></li>
+              <li><Link href="/services/bathroom-renovations">Bathroom Renovations</Link></li>
+              <li><Link href="/services/basement-finishing">Basement Finishing</Link></li>
+              <li><Link href="/services/quartz-stonework">Quartz &amp; Stonework</Link></li>
+              <li><Link href="/services/full-home-renovation">Full Home Renovations</Link></li>
             </ul>
           </div>
 
           <div>
             <h4>Contact &amp; Hours</h4>
             <div className="foot-contact">
-              <p>Unit 260 &ndash; 1916 West Broadway, Vancouver, BC</p>
-              <p><a href="tel:6047394477">📞 (604) 739-4477</a></p>
-              <p><a href="mailto:info@sophriaconstruction.ca">✉️ info@sophriaconstruction.ca</a></p>
-              <p className="foot-hours">Mon &ndash; Fri: 8:00am &ndash; 6:00pm<br />Sat: 9:00am &ndash; 4:00pm</p>
+              <p>📍 226-6465 Millcreek Dr., Mississauga, Ontario, CA, L5N 5R3</p>
+              <p><a href="tel:+14376054750">📞 +1 (437) 605-4750</a></p>
+              <p><a href="mailto:estimating@sophria.ca">✉️ estimating@sophria.ca</a></p>
+              <p className="foot-hours">🕒 Monday &ndash; Friday : 8am &ndash; 4pm</p>
             </div>
           </div>
         </div>
 
         <div className="foot-bottom">
-          <p>&copy; {new Date().getFullYear()} Sophria Construction. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sophria Private Limited. All rights reserved. Flooring &amp; Renovation solutions &mdash; Mississauga, Ontario, Canada.</p>
           <div className="foot-links" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
             <Link href="/services">Services</Link>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>&middot;</span>
+            <Link href="/projects">Projects</Link>
+            <span style={{ color: 'rgba(255,255,255,0.2)' }}>&middot;</span>
+            <Link href="/about">About</Link>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>&middot;</span>
             <Link href="/estimate">Free Quote</Link>
             <span style={{ color: 'rgba(255,255,255,0.2)' }}>&middot;</span>

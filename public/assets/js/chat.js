@@ -94,10 +94,10 @@
   function clearChips() { chipsBox.innerHTML = ''; }
 
   /* ---------- knowledge base ---------- */
-  var PHONE = '(604) 739-4477';
-  var PHONE_LINK = 'tel:6047394477';
+  var PHONE = '+1 (437) 605-4750';
+  var PHONE_LINK = 'tel:14376054750';
   var ZOHO_BOOK = 'contact.html';
-  var WHATSAPP_NUMBER = '16047394477'; // Vancouver line
+  var WHATSAPP_NUMBER = '114376054750'; // Mississauga, Ontario line
   function waLink(text) {
     return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
   }
@@ -137,13 +137,13 @@
     { re: /\b(warranty|guarantee)\b/i,
       msg: 'Every CFR project is backed by our <b>1-year craftsmanship warranty</b>, on top of a fixed quote agreed before we start. No surprise extras, ever.' },
     { re: /\b(area|areas|location|where|serve|serving|city|cities|vancouver|burnaby|richmond|surrey|north\s*van|west\s*van|coquitlam|delta|langley)\b/i,
-      msg: 'We serve <b>Vancouver &amp; Metro Vancouver</b> \u2014 including Vancouver, Burnaby, Richmond, Surrey, North Vancouver, West Vancouver, Coquitlam, Delta, Langley and White Rock. <a href="areas.html">See all service areas \u2192</a>' },
+      msg: 'We serve <b>Mississauga, Ontario &amp; Metro Mississauga, Ontario</b> \u2014 including Mississauga, Ontario, Burnaby, Richmond, Surrey, North Mississauga, Ontario, West Mississauga, Ontario, Coquitlam, Delta, Langley and White Rock. <a href="areas.html">See all service areas \u2192</a>' },
     { re: /\bservices?\b/i,
-      msg: '<b>Here\u2019s what we do</b> \u2014 full-home renovations across Vancouver & Metro:<br>\u2022 <b>Kitchens</b> \u2605 our specialty \u2014 from $25k<br>\u2022 <b>Bathrooms</b> \u2014 from $18k<br>\u2022 <b>Flooring</b> \u2014 from $8/sq ft<br>\u2022 <b>Painting</b> \u2014 from $2.50/sq ft<br>\u2022 <b>Drywall &amp; plaster</b> \u2014 from $3/sq ft<br>\u2022 <b>Quartz &amp; quartzite</b> stonework \u2014 from $85/sq ft<br>\u2022 <b>Basements</b> &amp; full remodels<br><a href="services.html">Explore all services \u2192</a>' },
+      msg: '<b>Here\u2019s what we do</b> \u2014 full-home renovations across Mississauga, Ontario & Metro:<br>\u2022 <b>Kitchens</b> \u2605 our specialty \u2014 from $25k<br>\u2022 <b>Bathrooms</b> \u2014 from $18k<br>\u2022 <b>Flooring</b> \u2014 from $8/sq ft<br>\u2022 <b>Painting</b> \u2014 from $2.50/sq ft<br>\u2022 <b>Drywall &amp; plaster</b> \u2014 from $3/sq ft<br>\u2022 <b>Quartz &amp; quartzite</b> stonework \u2014 from $85/sq ft<br>\u2022 <b>Basements</b> &amp; full remodels<br><a href="services.html">Explore all services \u2192</a>' },
     { re: /\b(hour|hours|open|when|schedule|available)\b/i,
       msg: 'We\u2019re open <b>Monday to Friday 9am\u20135:30pm, Saturday 10am\u20134pm</b>. The fastest way to reach us anytime is right here \u2014 or call <a href="' + PHONE_LINK + '">' + PHONE + '</a>.' },
     { re: /\b(contact|phone|number|call|email|e-mail|instagram|human|person|someone|agent)\b/i,
-      msg: 'You can reach us at <a href="' + PHONE_LINK + '">' + PHONE + '</a> or <a href="mailto:info@canadianflooringrenovations.ca">info@canadianflooringrenovations.ca</a> \u2014 Showroom: Unit 260 – 1916 West Broadway, Vancouver, BC. Or <a href="contact.html">send us a message \u2192</a>' },
+      msg: 'You can reach us at <a href="' + PHONE_LINK + '">' + PHONE + '</a> or <a href="mailto:info@canadianflooringrenovations.ca">info@canadianflooringrenovations.ca</a> \u2014 Showroom: Unit 260 – 1916 West Broadway, Mississauga, Ontario, BC. Or <a href="contact.html">send us a message \u2192</a>' },
     { re: /\b(how long|timeline|duration|take|finish|done)\b/i,
       msg: 'Typical timelines: painting 2\u20133 days, flooring 3\u20135 days, bathrooms 3\u20134 weeks, kitchens 4\u20136 weeks, full-home remodels 8\u201316 weeks. Your fixed quote includes a firm schedule before we start.' },
     { re: /\b(enquir(y|ies)|inquir(y|ies)|enquire)\b|\bform\b/i,

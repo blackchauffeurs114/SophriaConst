@@ -29,7 +29,7 @@ export default function Hero() {
             Flooring. Kitchens. Bathrooms.<br />Expertly Renovated.
           </p>
           <div className="button-row hero__actions re-hero__actions">
-            <a href="tel:+16047394477" className="re-hero-btn re-hero-btn--accent">Call Now</a>
+            <a href="tel:+14376054750" className="re-hero-btn re-hero-btn--accent">Call Now</a>
             <Link href="/estimate" className="re-hero-btn re-hero-btn--outline">Get Quote</Link>
           </div>
         </div>

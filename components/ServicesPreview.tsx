@@ -9,12 +9,12 @@ export default function ServicesPreview() {
           <div className="eyebrow">What We Do</div>
           <h2 className="display">One accountable crew &mdash; from first sketch to final handover.</h2>
           <p className="sec-desc">
-            Reliable, professional remodeling for kitchens, bathrooms, flooring, basements, decks &amp; beyond across Ontario. Design-build means one partner owns the vision, the budget and the timeline &mdash; no finger-pointing, no surprises, just exceptional spaces delivered with complete transparency.
+            Reliable, professional commercial flooring and luxury residential remodeling across Mississauga, the GTA &amp; Ontario. Design-build means one partner owns the vision, the budget and the timeline &mdash; no finger-pointing, no surprises, just exceptional spaces delivered with complete transparency.
           </p>
         </div>
 
         <div className="svc-grid">
-          <Link className="svc reveal" href="/services">
+          <Link className="svc reveal" href="/services/kitchen-remodeling">
             <div className="svc-num">01</div>
             <div className="svc-ico">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
@@ -30,7 +30,7 @@ export default function ServicesPreview() {
             <span className="svc-link">Explore &rarr;</span>
           </Link>
 
-          <Link className="svc reveal d1" href="/services">
+          <Link className="svc reveal d1" href="/services/bathroom-renovations">
             <div className="svc-num">02</div>
             <div className="svc-ico">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
@@ -44,7 +44,7 @@ export default function ServicesPreview() {
             <span className="svc-link">Explore &rarr;</span>
           </Link>
 
-          <Link className="svc reveal d2" href="/services">
+          <Link className="svc reveal d2" href="/services/basement-finishing">
             <div className="svc-num">03</div>
             <div className="svc-ico">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
@@ -72,19 +72,19 @@ export default function ServicesPreview() {
                 <path d="M9 15v6"></path>
               </svg>
             </div>
-            <h3>Hardwood &amp; Luxury Flooring</h3>
-            <p>Engineered hardwood, luxury vinyl plank, porcelain tile, and herringbone layouts installed laser-level and guaranteed silent underfoot.</p>
+            <h3>Hardwood &amp; Specialized Flooring</h3>
+            <p>Terrazzo, VCT, carpet tile, rubber, sheet vinyl, epoxy, and wide-plank hardwood installed laser-level and guaranteed silent.</p>
             <span className="svc-link">Explore &rarr;</span>
           </Link>
 
-          <Link className="svc reveal d1" href="/services">
+          <Link className="svc reveal d1" href="/services/quartz-stonework">
             <div className="svc-num">05</div>
             <div className="svc-ico">
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3">
-                <path d="M6 3h12l4 6-10 12L2 9l4-6z"></path>
+                <path d="M6 3h12l4 6-10 12L2 9l4-6Z"></path>
                 <path d="M2 9h20"></path>
-                <path d="m10 3 2 6-2 12"></path>
-                <path d="m14 3-2 6 2 12"></path>
+                <path d="m10 3 2 6-4 12"></path>
+                <path d="m14 3-2 6 4 12"></path>
               </svg>
             </div>
             <h3>Quartz &amp; Quartzite Stonework</h3>

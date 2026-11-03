@@ -30,22 +30,22 @@ export default function ContactCTA() {
               Tell us about your project. We&apos;ll arrange a private consultation to explore your vision, your space and the possibilities ahead.
             </p>
             <div className="cinfo reveal d3">
-              <a href="tel:6047394477">
+              <a href="tel:+14376054750">
                 <span className="ci-ico">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"></path>
                   </svg>
                 </span>
-                (604) 739-4477
+                +1 (437) 605-4750
               </a>
-              <a href="mailto:info@sophriaconstruction.ca">
+              <a href="mailto:estimating@sophria.ca">
                 <span className="ci-ico">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="2" y="4" width="20" height="16" rx="2"></rect>
                     <path d="m22 7-10 6L2 7"></path>
                   </svg>
                 </span>
-                info@sophriaconstruction.ca
+                estimating@sophria.ca
               </a>
               <div>
                 <span className="ci-ico">
@@ -54,7 +54,7 @@ export default function ContactCTA() {
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
                 </span>
-                Unit 260 – 1916 West Broadway, Vancouver, BC
+                226-6465 Millcreek Dr., Mississauga, Ontario, CA, L5N 5R3
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function ContactCTA() {
               </div>
               <div className="field">
                 <label>Phone</label>
-                <input type="tel" name="phone" id="hcf-phone" required placeholder="(604) 000-0000" />
+                <input type="tel" name="phone" id="hcf-phone" required placeholder="(437) 000-0000" />
               </div>
             </div>
             <div className="field">
@@ -78,20 +78,17 @@ export default function ContactCTA() {
             <div className="field">
               <label>Project Type</label>
               <select name="type" id="hcf-type" defaultValue="Flooring">
-                <option value="Flooring">Flooring (supply and install)</option>
-                <option value="Bathroom Renovation">Bathroom Renovation</option>
+                <option value="Terrazzo Flooring">Terrazzo Flooring</option>
+                <option value="VCT Flooring">VCT Flooring</option>
+                <option value="Carpet Tile Flooring">Carpet Tile Flooring</option>
+                <option value="Rubber Flooring">Rubber Flooring</option>
+                <option value="Sheet Vinyl">Sheet Vinyl</option>
+                <option value="Epoxy Floors">Epoxy &amp; Resin Floors</option>
                 <option value="Kitchen Renovation">Kitchen Renovation</option>
-                <option value="Condo Renovation">Condo / Strata Renovation</option>
+                <option value="Bathroom Renovation">Bathroom Renovation</option>
+                <option value="Basement Finishing">Basement Finishing &amp; Suites</option>
+                <option value="Quartz Countertops">Quartz &amp; Quartzite Stonework</option>
                 <option value="Full Home Renovation">Full Home Renovation</option>
-                <option value="Laminate Flooring">Laminate Flooring</option>
-                <option value="Hardwood Flooring">Hardwood Flooring</option>
-                <option value="Luxury Vinyl">Luxury Vinyl (LVP / SPC)</option>
-                <option value="Carpet">Carpet</option>
-                <option value="Tile">Tile</option>
-                <option value="Countertops">Countertops</option>
-                <option value="Epoxy Floors">Epoxy &amp; Concrete Floors</option>
-                <option value="Commercial Renovation">Commercial Renovation</option>
-                <option value="Popcorn Ceiling Removal">Popcorn Ceiling Removal</option>
                 <option value="Other">Other</option>
               </select>
             </div>
@@ -103,7 +100,7 @@ export default function ContactCTA() {
               Send Inquiry
             </button>
             <a
-              href="https://wa.me/16047394477?text=Hi%2C%20I%27d%20like%20a%20free%20estimate"
+              href="https://wa.me/14376054750?text=Hi%2C%20I%27d%20like%20a%20free%20estimate"
               target="_blank"
               rel="noopener noreferrer"
               className="home-wa-link"
@@ -112,7 +109,7 @@ export default function ContactCTA() {
             </a>
 
             <div className="home-trust-note">
-              Serving Vancouver &amp; Ontario &middot; Licensed &amp; Insured &middot; BBB Accredited<br />
+              Serving Mississauga, Ontario &amp; Canada &middot; Licensed &amp; Insured &middot; 25+ Years Experience<br />
               2,500+ Completed Projects &middot; 1-Year Installation Guarantee &middot; Free In-Home Estimates
             </div>
 
@@ -124,7 +121,7 @@ export default function ContactCTA() {
                 Prefer we call you?
               </div>
               <div className="home-cb-sub">
-                Leave your number &mdash; we&apos;ll call you back within 30 minutes (Mon&ndash;Sat, 8am&ndash;6pm).
+                Leave your number &mdash; we&apos;ll call you back within 30 minutes (Mon&ndash;Fri, 8am&ndash;4pm).
               </div>
               <div className="home-cb-inputs">
                 <input
