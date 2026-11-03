@@ -1,0 +1,224 @@
+{
+  "terrazzo": {
+    "slug": "terrazzo",
+    "title": "Terrazzo Flooring",
+    "lead": "Durable and stylish, terrazzo flooring blends marble, quartz, and glass for timeless, low-maintenance elegance.",
+    "image": "/assets/svc-terrazzo-800-C62jRl7J.webp",
+    "paras": [
+      "+1 (437) 605-4750Get a quoteHomeServicesTerrazzo FlooringFlooring systemTerrazzo FlooringDurable and stylish, terrazzo flooring blends marble, quartz, and glass for timeless, low-maintenance elegance.Chips of marble, quartz and glass set into a binder, then ground and polished flat. The result is a seamless surface with genuine depth — and a service life measured in decades rather than years.",
+      "Terrazzo is poured in place, so it has no seams for dirt to collect in and no tiles to lift. Aggregate colour, chip size and divider strips are all specified per project, which makes it the system of choice when the floor is part of the architecture rather than a background to it.",
+      "Because the surface is ground and polished after curing, it can be restored decades later by grinding it back rather than replacing it. That is what keeps terrazzo in service in transit halls, civic buildings and schools long after other finishes have been torn out twice.",
+      "Terrazzo finishing, grinding and polishing is core work for our crews — it&#x27;s the discipline the company was built on.",
+      "Lobbies and atriumsSchools and campusesCivic and healthcare buildingsRetail concoursesOther systemsVCTCarpet TileRubberSheet VinylEpoxyContact usLet&#x27;s talk about your floorQuestions, or need expert flooring advice? Our team is here to help — personalized support, complimentary estimates, and guidance on your next project."
+    ],
+    "specs": [
+      {
+        "label": "Finish",
+        "value": "Ground and polished"
+      },
+      {
+        "label": "Seams",
+        "value": "None — poured in place"
+      },
+      {
+        "label": "Renewable",
+        "value": "Yes, by regrinding"
+      },
+      {
+        "label": "Traffic",
+        "value": "Very heavy"
+      }
+    ],
+    "bestFor": [
+      "Lobbies and atriums",
+      "Schools and campuses",
+      "Civic and healthcare buildings",
+      "Retail concourses"
+    ]
+  },
+  "vct": {
+    "slug": "vct",
+    "title": "VCT Flooring",
+    "lead": "Vinyl Composition Tile offers affordable, resilient flooring ideal for high-traffic commercial and institutional spaces.",
+    "image": "/assets/svc-vct-800-Dg52_NNC.webp",
+    "paras": [
+      "+1 (437) 605-4750Get a quoteHomeServicesVCT FlooringFlooring systemVCT FlooringVinyl Composition Tile offers affordable, resilient flooring ideal for high-traffic commercial and institutional spaces.Vinyl Composition Tile is the workhorse of institutional flooring: inexpensive per square foot, available in a wide colour range, and replaceable one tile at a time.",
+      "VCT arrives as rigid tiles that are adhered to a prepared subfloor. Because the format is modular, a damaged area can be lifted and replaced without touching the surrounding floor — a meaningful advantage in buildings that stay open while repairs happen.",
+      "The trade-off is maintenance: VCT expects a periodic strip-and-wax cycle to keep its finish. Where a facility has the cleaning programme to support that, it delivers the lowest installed cost of any system we lay.",
+      "Colour can be laid out in patterns, borders and wayfinding lines, which is why it remains standard in schools, clinics and back-of-house areas.",
+      "Schools and corridorsHealthcare support areasRetail back-of-houseCommunity facilitiesOther systemsTerrazzoCarpet TileRubberSheet VinylEpoxyContact usLet&#x27;s talk about your floorQuestions, or need expert flooring advice? Our team is here to help — personalized support, complimentary estimates, and guidance on your next project."
+    ],
+    "specs": [
+      {
+        "label": "Format",
+        "value": "Modular tile"
+      },
+      {
+        "label": "Repair",
+        "value": "Tile-by-tile"
+      },
+      {
+        "label": "Upkeep",
+        "value": "Strip and wax cycle"
+      },
+      {
+        "label": "Cost",
+        "value": "Lowest installed"
+      }
+    ],
+    "bestFor": [
+      "Schools and corridors",
+      "Healthcare support areas",
+      "Retail back-of-house",
+      "Community facilities"
+    ]
+  },
+  "carpet-tile": {
+    "slug": "carpet-tile",
+    "title": "Carpet Tile Flooring",
+    "lead": "Easy to install and replace, carpet tiles provide comfort, sound insulation, and versatile design options.",
+    "image": "/assets/svc-carpet-tile-800-BP0COmyG.webp",
+    "paras": [
+      "+1 (437) 605-4750Get a quoteHomeServicesCarpet Tile FlooringFlooring systemCarpet Tile FlooringEasy to install and replace, carpet tiles provide comfort, sound insulation, and versatile design options.Modular carpet that installs fast, absorbs sound, and lets you replace the worn squares instead of the whole floor.",
+      "Carpet tile solves the two problems broadloom carpet has in commercial space: waste during installation, and total replacement when one area wears out. Tiles are laid from the centre outward and cut only at the perimeter, and stock can be held back for future repairs.",
+      "Acoustically it is the quietest option we install — worth specifying in open-plan offices and anywhere speech privacy matters. It is also the warmest underfoot, which changes how a space feels more than most people expect.",
+      "Patterned and plank formats allow zoning and wayfinding without changing material, and tiles can be rotated during their life to even out wear.",
+      "Open-plan officesMeeting roomsLibraries and quiet zonesHospitality interiorsOther systemsTerrazzoVCTRubberSheet VinylEpoxyContact usLet&#x27;s talk about your floorQuestions, or need expert flooring advice? Our team is here to help — personalized support, complimentary estimates, and guidance on your next project."
+    ],
+    "specs": [
+      {
+        "label": "Format",
+        "value": "Modular tile or plank"
+      },
+      {
+        "label": "Acoustics",
+        "value": "Best in class"
+      },
+      {
+        "label": "Repair",
+        "value": "Swap individual tiles"
+      },
+      {
+        "label": "Comfort",
+        "value": "Warm underfoot"
+      }
+    ],
+    "bestFor": [
+      "Open-plan offices",
+      "Meeting rooms",
+      "Libraries and quiet zones",
+      "Hospitality interiors"
+    ]
+  },
+  "rubber": {
+    "slug": "rubber",
+    "title": "Rubber Flooring",
+    "lead": "Shock-absorbent and slip-resistant, rubber flooring is perfect for gyms, schools, and high-impact areas.",
+    "image": "/assets/svc-rubber-800-B3bguWQ3.webp",
+    "paras": [
+      "+1 (437) 605-4750Get a quoteHomeServicesRubber FlooringFlooring systemRubber FlooringShock-absorbent and slip-resistant, rubber flooring is perfect for gyms, schools, and high-impact areas.Dense, resilient sheet and tile that absorbs impact, grips underfoot when wet, and shrugs off dropped weight.",
+      "Rubber is specified where the floor takes punishment: weight rooms, sports halls, plant rooms and circulation routes that see trolleys and equipment all day. Its resilience protects both the substrate below and the equipment dropped on it.",
+      "Slip resistance holds up in wet conditions better than most hard surfaces, which is why it appears around changing rooms and entrances. It needs no wax — routine cleaning is enough to maintain the finish, which lowers lifetime cost against systems that require a polish cycle.",
+      "Available in sheet for a near-seamless field, or interlocking tile where sections may need lifting for access.",
+      "Gyms and weight roomsSchool sports hallsPlant and service roomsEntrances and changing areasOther systemsTerrazzoVCTCarpet TileSheet VinylEpoxyContact usLet&#x27;s talk about your floorQuestions, or need expert flooring advice? Our team is here to help — personalized support, complimentary estimates, and guidance on your next project."
+    ],
+    "specs": [
+      {
+        "label": "Impact",
+        "value": "High absorption"
+      },
+      {
+        "label": "Slip",
+        "value": "Resistant when wet"
+      },
+      {
+        "label": "Upkeep",
+        "value": "No wax required"
+      },
+      {
+        "label": "Format",
+        "value": "Sheet or interlocking tile"
+      }
+    ],
+    "bestFor": [
+      "Gyms and weight rooms",
+      "School sports halls",
+      "Plant and service rooms",
+      "Entrances and changing areas"
+    ]
+  },
+  "sheet-vinyl": {
+    "slug": "sheet-vinyl",
+    "title": "Sheet Vinyl",
+    "lead": "Sheet vinyl delivers seamless, waterproof flooring with a wide range of designs and easy maintenance.",
+    "image": "/assets/svc-sheet-vinyl-800-vTzrFdvU.webp",
+    "paras": [
+      "+1 (437) 605-4750Get a quoteHomeServicesSheet VinylFlooring systemSheet VinylSheet vinyl delivers seamless, waterproof flooring with a wide range of designs and easy maintenance.Wide-roll vinyl with heat-welded seams, producing a continuous waterproof surface that can be coved up the wall.",
+      "Where hygiene governs the specification, sheet vinyl is usually the answer. Seams are heat-welded rather than butted, and the material can be coved at the wall junction to remove the dirt-trapping corner entirely — giving a floor that can genuinely be washed down.",
+      "That makes it standard in clinical areas, food preparation spaces, laboratories and washrooms. Slip-resistant grades are available where water is expected underfoot.",
+      "Modern print and wear layers cover a wide design range, including convincing wood and stone visuals, without giving up the continuous waterproof surface.",
+      "Clinical and treatment roomsKitchens and food prepLaboratoriesWashrooms and wet areasOther systemsTerrazzoVCTCarpet TileRubberEpoxyContact usLet&#x27;s talk about your floorQuestions, or need expert flooring advice? Our team is here to help — personalized support, complimentary estimates, and guidance on your next project."
+    ],
+    "specs": [
+      {
+        "label": "Seams",
+        "value": "Heat-welded"
+      },
+      {
+        "label": "Water",
+        "value": "Fully waterproof"
+      },
+      {
+        "label": "Detail",
+        "value": "Coved skirting available"
+      },
+      {
+        "label": "Hygiene",
+        "value": "Washdown capable"
+      }
+    ],
+    "bestFor": [
+      "Clinical and treatment rooms",
+      "Kitchens and food prep",
+      "Laboratories",
+      "Washrooms and wet areas"
+    ]
+  },
+  "epoxy": {
+    "slug": "epoxy",
+    "title": "Epoxy Flooring",
+    "lead": "Epoxy flooring creates a strong, glossy, chemical-resistant surface ideal for garages, warehouses, and industrial areas.",
+    "image": "/assets/svc-epoxy-800-BCPc_BC8.webp",
+    "paras": [
+      "+1 (437) 605-4750Get a quoteHomeServicesEpoxy FlooringFlooring systemEpoxy FlooringEpoxy flooring creates a strong, glossy, chemical-resistant surface ideal for garages, warehouses, and industrial areas.A liquid-applied resin system that cures into a hard, jointless, chemically resistant surface bonded directly to the slab.",
+      "Epoxy is applied as a liquid and cures in place, so it follows falls, forms coves and leaves no joints. Bonded to a properly prepared slab it produces a floor that resists oils, solvents and cleaning chemicals that would attack most other finishes.",
+      "Build-up can be varied from a thin roller-applied coating to a heavy-duty screed, depending on whether the floor faces foot traffic, forklifts or thermal shock. Anti-slip aggregate can be broadcast into the surface where required, and line marking is applied as part of the system.",
+      "Slab preparation decides whether an epoxy floor lasts. Mechanical grinding and moisture testing before any resin goes down is not an optional extra — it&#x27;s the job.",
+      "Warehouses and distributionWorkshops and garagesManufacturing floorsPlant and service areasOther systemsTerrazzoVCTCarpet TileRubberSheet VinylContact usLet&#x27;s talk about your floorQuestions, or need expert flooring advice? Our team is here to help — personalized support, complimentary estimates, and guidance on your next project."
+    ],
+    "specs": [
+      {
+        "label": "Application",
+        "value": "Liquid-applied, jointless"
+      },
+      {
+        "label": "Chemicals",
+        "value": "Highly resistant"
+      },
+      {
+        "label": "Build-up",
+        "value": "Coating to heavy screed"
+      },
+      {
+        "label": "Prep",
+        "value": "Mechanical grind + moisture test"
+      }
+    ],
+    "bestFor": [
+      "Warehouses and distribution",
+      "Workshops and garages",
+      "Manufacturing floors",
+      "Plant and service areas"
+    ]
+  }
+}

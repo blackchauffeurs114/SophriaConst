@@ -1,0 +1,127 @@
+{
+  "kitchen-remodeling": {
+    "slug": "kitchen-remodeling",
+    "title": "Kitchen Remodeling",
+    "lead": "Chef-grade layouts, bespoke architectural cabinetry, and seamless waterfall quartz islands designed around how you live and entertain.",
+    "image": "/assets/service-kitchen.jpg",
+    "paras": [
+      "The kitchen is the culinary and social heart of any home. Sophria Private Limited delivers full-scale architectural kitchen transformations across Mississauga, Oakville, and the Greater Toronto Area — combining bespoke cabinetry, precision trade craftsmanship, and durable luxury surfaces built for a lifetime of entertaining.",
+      "Every kitchen remodel begins with in-depth spatial planning: optimizing workflow triangles, concealing pantry access, integrating flush-mount smart appliances, and rerouting mechanical, electrical, and gas lines with certified Red Seal trades.",
+      "From soft-close solid wood box cabinetry with custom fluted details to precision-mitered quartz and quartzite waterfall countertops, our team manages the entire fabrication, plumbing, lighting, and installation process under a single fixed-price guarantee.",
+      "We install under-cabinet LED task lighting, designer full-height porcelain backsplashes, whisper-quiet custom range hoods, and heavy-duty concealed storage accessories to ensure effortless daily utility.",
+      "All kitchen renovations adhere to Ontario Building Code (OBC), ESA electrical permitting, and our comprehensive 1-year workmanship guarantee with zero mid-project change order traps."
+    ],
+    "specs": [
+      { "label": "Cabinetry", "value": "Custom architectural millwork" },
+      { "label": "Countertops", "value": "Waterfall quartz & quartzite" },
+      { "label": "Permits", "value": "Full OBC & ESA compliance" },
+      { "label": "Warranty", "value": "1-Year comprehensive coverage" }
+    ],
+    "bestFor": [
+      "Open-concept main floor reconfigurations",
+      "Custom chef-grade luxury residences",
+      "Condominium and luxury townhouse kitchens",
+      "Executive family living and entertaining spaces"
+    ]
+  },
+  "bathroom-renovations": {
+    "slug": "bathroom-renovations",
+    "title": "Bathroom Renovations",
+    "lead": "Spa-grade sanctuary retreats, Schluter-certified waterproof curbless walk-in showers, linear drains, and floating stone vanities.",
+    "image": "/assets/service-bathroom.jpg",
+    "paras": [
+      "Transform tired, outdated bathrooms into private five-star spa retreats. Sophria specializes in high-performance wet room engineering, heated floor systems, zero-clearance curbless walk-in showers, and custom architectural glass enclosures across Mississauga and Ontario.",
+      "Waterproofing is the single most critical aspect of bathroom longevity. We build exclusively with full Schluter-Kerdi waterproof membrane assemblies and linear trench drains — ensuring that moisture, vapor, and mold can never penetrate the subfloor or wall cavities.",
+      "Choose from large-format porcelain slabs, custom terrazzo accents, or bookmatched natural marble tiles. We integrate programmable electric in-floor radiant heating with smart digital thermostats for warm, silent comfort underfoot.",
+      "Custom dual-basin floating vanities, backlit anti-fog mirrors, deep freestanding soaking tubs, and thermostatic rainfall shower fixtures with concealed body jets elevate your daily routine into a rejuvenating ritual.",
+      "All plumbing is installed by licensed Ontario master plumbers and rigorously pressure-tested prior to tile installation."
+    ],
+    "specs": [
+      { "label": "Waterproofing", "value": "100% Schluter-Kerdi certified" },
+      { "label": "Drain Type", "value": "Zero-threshold linear drain" },
+      { "label": "Heating", "value": "Radiant electric smart thermostat" },
+      { "label": "Glass", "value": "10mm-12mm architectural tempered" }
+    ],
+    "bestFor": [
+      "Master ensuite spa transformations",
+      "Zero-barrier accessible curbless walk-in showers",
+      "Powder room and guest bath renovations",
+      "Luxury custom condominium wet rooms"
+    ]
+  },
+  "basement-finishing": {
+    "slug": "basement-finishing",
+    "title": "Basement Finishing & Legal Suites",
+    "lead": "Turn underutilized lower levels into high-value living spaces — legal secondary rental suites, home theatres, golf simulators, and guest retreats.",
+    "image": "/assets/img/projects/garden-hero.jpg",
+    "paras": [
+      "A professionally finished basement dramatically increases your property value and unlocks hundreds of square feet of comfortable living or passive rental income. Sophria designs and constructs turnkey basement environments throughout Mississauga and Ontario.",
+      "We begin with complete moisture management, closed-cell spray foam insulation, subfloor thermal breaks (Dricore / acoustic membranes), and comprehensive soundproofing between floor joists with Roxul Safe'n'Sound and resilient channels.",
+      "Planning a legal secondary suite or duplex conversion? Our team handles city zoning verification, architectural egress window cutting, fire-separation drywall, dedicated electrical subpanels, and full building permit approvals.",
+      "For homeowners seeking luxury leisure space, we craft custom wet bars with beverage chillers, golf simulator rooms with acoustic padded walls, multi-tiered home cinemas, dedicated gyms with shock-absorbent rubber flooring, and full 3-piece designer bathrooms.",
+      "Every basement build is backed by our fixed-schedule commitment, clean job site protocol, and transparent milestone tracking."
+    ],
+    "specs": [
+      { "label": "Insulation", "value": "R20+ continuous thermal barrier" },
+      { "label": "Soundproofing", "value": "Acoustic batts + resilient channel" },
+      { "label": "Compliance", "value": "Ontario Building Code legal suite" },
+      { "label": "Subfloor", "value": "Moisture-barrier insulated panels" }
+    ],
+    "bestFor": [
+      "Legal secondary basement income suites",
+      "Executive home cinemas & entertainment lounges",
+      "Private home fitness centers & golf simulators",
+      "Multi-generational family in-law suites"
+    ]
+  },
+  "quartz-stonework": {
+    "slug": "quartz-stonework",
+    "title": "Custom Quartz & Quartzite Stonework",
+    "lead": "Bookmatched natural quartzite, full-height stone backsplashes, and seamless waterfall edges fabricated with laser precision.",
+    "image": "/assets/service-kitchen.jpg",
+    "paras": [
+      "Sophria brings decades of stone sourcing, CNC precision fabrication, and flawless installation expertise to kitchen countertops, bathroom vanities, fireplace feature walls, and commercial reception desks across Mississauga and Ontario.",
+      "We source slabs directly from the world's finest quarries and engineered quartz manufacturers (Cambria, Caesarstone, Silestone, HanStone, MSI). Our digital laser templating captures exact wall deviations to a tenth of a millimeter.",
+      "Experience the pinnacle of stone fabrication: continuous 45-degree mitered waterfall gables where marble and quartzite veins flow effortlessly down to the floor, seamless undermount sink cutouts, and flush cooktop integrations.",
+      "Looking for showstopping focal points? We fabricate floor-to-ceiling bookmatched fireplace surrounds, floating quartz powder room vanities, and illuminated translucent quartzite accents with integrated LED light sheets.",
+      "All surfaces are professionally sealed, antimicrobial, non-porous, and scratch/heat resistant for decades of worry-free luxury."
+    ],
+    "specs": [
+      { "label": "Fabrication", "value": "CNC digital laser templated" },
+      { "label": "Edge Profiles", "value": "Mitered waterfall, eased, bevel" },
+      { "label": "Materials", "value": "Quartz, Quartzite, Marble, Granite" },
+      { "label": "Surface", "value": "Stain, scratch & heat resistant" }
+    ],
+    "bestFor": [
+      "Waterfall kitchen islands and full-height slabs",
+      "Bookmatched architectural fireplace surrounds",
+      "Floating stone vanities and custom integrated sinks",
+      "Commercial boardrooms and reception consoles"
+    ]
+  },
+  "full-home-renovation": {
+    "slug": "full-home-renovation",
+    "title": "Full Home Renovations & Additions",
+    "lead": "Comprehensive turnkey design-build transformations — structural load-bearing wall removals, second-storey additions, and complete interior reconfigurations.",
+    "image": "/assets/img/projects/laneway-hero.jpg",
+    "paras": [
+      "When a home needs more than just a single room update, Sophria Private Limited orchestrates complete gut renovations, additions, and layout restructuring with unified project management and fixed-price transparency across Mississauga and Ontario.",
+      "We replace restrictive compartmentalized rooms with breathtaking open-concept layouts. Our structural engineers design and install flush-mount steel beams (LVL / W-beams) allowing for unobstructed sightlines across kitchen, dining, and living areas.",
+      "Our turnkey scope covers every phase: architectural drawings, municipal permit acquisition, structural framing, HVAC zoning rebalancing, 200-amp electrical service upgrades, whole-home European oak flooring, custom millwork, and exterior envelope modernization.",
+      "A dedicated Red Seal project manager is on-site daily, coordinating trades, managing inspections, maintaining dust containment with HEPA scrubbers, and delivering weekly milestone reports.",
+      "Experience the certainty of a fixed completion schedule and a comprehensive 1-year full-scope warranty on all structural, mechanical, and finish craftsmanship."
+    ],
+    "specs": [
+      { "label": "Project Scope", "value": "Turnkey architectural design-build" },
+      { "label": "Engineering", "value": "Licensed Ontario P.Eng stamped" },
+      { "label": "Management", "value": "Dedicated on-site Red Seal PM" },
+      { "label": "Contract", "value": "100% Fixed-Price Certainty" }
+    ],
+    "bestFor": [
+      "Historic and mature home modernizations",
+      "Load-bearing wall removals & open concepts",
+      "Second-storey extensions & laneway additions",
+      "Whole-home gut renovations & luxury flips"
+    ]
+  }
+}
