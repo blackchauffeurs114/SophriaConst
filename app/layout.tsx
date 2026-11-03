@@ -27,6 +27,15 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Alegreya+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,500&family=Didact+Gothic&display=swap"
           rel="stylesheet"
         />
+        {/* Official Roomvo AI Visualizer Widget */}
+        <script
+          async
+          id="roomvoAssistant"
+          type="text/javascript"
+          data-locale="en-ca"
+          data-position="bottom-right"
+          src="https://www.roomvo.com/static/scripts/b2b/common/assistant.js"
+        ></script>
       </head>
       <body data-page="home">
         <ScrollEffects />
