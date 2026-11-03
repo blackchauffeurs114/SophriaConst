@@ -45,30 +45,42 @@ export default function Header() {
         <nav className="re-nav-desktop re-nav-desktop--left" aria-label="Primary navigation">
           <Link href="/" className="re-nav-link">Home</Link>
 
-          {/* Services Dropdown */}
+          {/* Services Dropdown - Click to Reveal / Click to Hide */}
           <div
             ref={dropdownRef}
             className="re-nav-dropdown-wrapper"
             style={{ position: 'relative' }}
-            onMouseEnter={() => setServicesDropdownOpen(true)}
-            onMouseLeave={() => {
-              setServicesDropdownOpen(false);
-              setFlooringSubOpen(false);
-            }}
           >
-            <Link
-              href="/services"
+            <button
+              type="button"
               className="re-nav-link"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}
-              onClick={(e) => {
-                // Allows click to toggle on touch/trackpad
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                font: 'inherit',
+                color: servicesDropdownOpen ? '#83c0ff' : 'inherit',
+                padding: '0 12px',
+                lineHeight: 'inherit',
+                outline: 'none',
               }}
+              onClick={() => {
+                setServicesDropdownOpen(prev => !prev);
+                if (servicesDropdownOpen) {
+                  setFlooringSubOpen(false);
+                }
+              }}
+              aria-expanded={servicesDropdownOpen}
+              aria-haspopup="true"
             >
               Services
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style={{ transition: 'transform 0.2s', transform: servicesDropdownOpen ? 'rotate(180deg)' : 'none' }}>
                 <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </Link>
+            </button>
 
             {/* Dropdown Menu */}
             {servicesDropdownOpen && (
@@ -100,6 +112,10 @@ export default function Header() {
                   onMouseLeave={() => setFlooringSubOpen(false)}
                 >
                   <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setFlooringSubOpen(prev => !prev);
+                    }}
                     style={{
                       display: 'flex',
                       alignItems: 'center',

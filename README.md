@@ -1,6 +1,6 @@
 # SophriaConst
 
-A modern, high-performance website built with **Next.js 15 (App Router)**, **React 18**, and **TypeScript** for **Sophria Construction** — an architectural renovation and master flooring design-build firm based in Ontario & Vancouver.
+A modern, high-performance website built with **Next.js 15 (App Router)**, **React 18**, and **TypeScript** for **Sophria Private Limited** — an architectural renovation and master flooring design-build firm based in Mississauga, Ontario & the Greater Toronto Area.
 
 ## Features
 
