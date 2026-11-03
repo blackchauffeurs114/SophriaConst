@@ -4,8 +4,21 @@ import Link from 'next/link';
 export default function ConsultationBanner() {
   return (
     <section className="cta-banner" id="consultation">
-      <div className="banner-media" style={{ backgroundImage: "url('/assets/img/projects/ext-rear.jpg')" }}></div>
-      <div className="banner-scrim"></div>
+      <div
+        className="banner-media"
+        style={{
+          backgroundImage: "url('/assets/img/projects/canada-detached-luxury-home.jpg')",
+          backgroundPosition: 'center 40%',
+          backgroundSize: 'cover'
+        }}
+      ></div>
+      <div
+        className="banner-scrim"
+        style={{
+          background: 'linear-gradient(180deg, rgba(5, 11, 28, 0.58) 0%, rgba(5, 11, 28, 0.78) 100%)',
+          backdropFilter: 'blur(1px)'
+        }}
+      ></div>
       <div className="banner-inner">
         <div className="eyebrow center reveal">YOUR VISION, BUILT</div>
         <h2 className="reveal d1">Let&apos;s create a space worth keeping.</h2>

@@ -7,20 +7,16 @@ export default function Footer() {
       <div className="container">
         <div className="foot-grid">
           <div className="foot-brand">
-            <Link className="brand" href="/">
+            <Link className="brand" href="/" aria-label="Sophria Construction Home">
               <img
                 src="/assets/sophria-logo.png"
-                alt="SophriaConst logo"
-                style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
+                alt="Sophria Construction"
+                style={{ height: '48px', width: 'auto', objectFit: 'contain', display: 'block', marginBottom: '18px' }}
               />
-              <span className="wordmark grad-silver">
-                SophriaConst<small>Flooring · Kitchens · Bathrooms</small>
-              </span>
             </Link>
             <p>
-              Vancouver&apos;s premier luxury renovation and flooring crew. We turn tired rooms into the reason you rush home &mdash; on time, on budget, and built to be stared at.
+              Vancouver&apos;s premier luxury renovation and master flooring crew. We turn tired spaces into architectural living environments &mdash; on time, on budget, and built to the highest standard.
             </p>
-            <span className="script" style={{ fontSize: '1.6rem' }}>Building Better Spaces</span>
           </div>
 
           <div>
@@ -29,7 +25,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/services">Services</Link></li>
               <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/about">About</Link></li>
+              <li><Link href="/about">About Us</Link></li>
               <li><Link href="/estimate">Instant Estimate</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
@@ -38,11 +34,11 @@ export default function Footer() {
           <div>
             <h4>Renovations</h4>
             <ul>
-              <li><Link href="/services">Kitchen Remodeling</Link></li>
-              <li><Link href="/services">Bathroom Renovations</Link></li>
-              <li><Link href="/services">Basement Finishing</Link></li>
-              <li><Link href="/services">Hardwood &amp; Luxury Flooring</Link></li>
-              <li><Link href="/services">Quartz &amp; Quartzite Stonework</Link></li>
+              <li><Link href="/services#service-kitchen">Kitchen Remodeling</Link></li>
+              <li><Link href="/services#service-bathroom">Bathroom Renovations</Link></li>
+              <li><Link href="/services#service-basement">Basement Finishing</Link></li>
+              <li><Link href="/services#service-flooring">Hardwood &amp; Luxury Flooring</Link></li>
+              <li><Link href="/services#service-stone">Quartz &amp; Quartzite Stonework</Link></li>
             </ul>
           </div>
 
@@ -58,11 +54,11 @@ export default function Footer() {
         </div>
 
         <div className="foot-bottom">
-          <p>&copy; {new Date().getFullYear()} Sophria Construction (SophriaConst). All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Sophria Construction. All rights reserved.</p>
           <div className="foot-links">
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
-            <Link href="/sitemap.xml">Sitemap</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/estimate">Free Quote</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
       </div>
