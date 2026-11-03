@@ -130,8 +130,7 @@ export default function Header() {
                       transition: 'all 0.2s',
                     }}
                   >
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontSize: '1rem' }}>📐</span>
+                    <span style={{ display: 'flex', alignItems: 'center' }}>
                       Flooring Systems
                     </span>
                     <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
@@ -225,42 +224,42 @@ export default function Header() {
                 <Link
                   href="/services/kitchen-remodeling"
                   className="re-sub-item"
-                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}
+                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                   onClick={() => setServicesDropdownOpen(false)}
                 >
-                  <span>🍳</span> Kitchen Remodeling
+                  Kitchen Remodeling
                 </Link>
                 <Link
                   href="/services/bathroom-renovations"
                   className="re-sub-item"
-                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}
+                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                   onClick={() => setServicesDropdownOpen(false)}
                 >
-                  <span>🛁</span> Bathroom Renovations
+                  Bathroom Renovations
                 </Link>
                 <Link
                   href="/services/basement-finishing"
                   className="re-sub-item"
-                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}
+                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                   onClick={() => setServicesDropdownOpen(false)}
                 >
-                  <span>🏠</span> Basement Finishing
+                  Basement Finishing
                 </Link>
                 <Link
                   href="/services/quartz-stonework"
                   className="re-sub-item"
-                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}
+                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                   onClick={() => setServicesDropdownOpen(false)}
                 >
-                  <span>💎</span> Quartz &amp; Stonework
+                  Quartz &amp; Stonework
                 </Link>
                 <Link
                   href="/services/full-home-renovation"
                   className="re-sub-item"
-                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}
+                  style={{ padding: '8px 14px', borderRadius: '8px', color: '#e2e8f0', fontSize: '0.85rem', textDecoration: 'none', fontWeight: 600, display: 'block' }}
                   onClick={() => setServicesDropdownOpen(false)}
                 >
-                  <span>🏗️</span> Full Home Renovations
+                  Full Home Renovations
                 </Link>
 
                 <div style={{ height: '1px', background: 'rgba(255, 255, 255, 0.08)', margin: '4px 6px' }}></div>
@@ -332,7 +331,7 @@ export default function Header() {
                     onClick={() => setMobileFlooringOpen(!mobileFlooringOpen)}
                     style={{ color: '#83c0ff', fontWeight: 700, fontSize: '1rem', padding: '8px 0', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
                   >
-                    <span>📐 Flooring Systems</span>
+                    <span>Flooring Systems</span>
                     <span>{mobileFlooringOpen ? '–' : '+'}</span>
                   </div>
                   {mobileFlooringOpen && (
@@ -349,11 +348,11 @@ export default function Header() {
 
                 {/* Direct Renovation Links */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', paddingTop: '6px' }}>
-                  <Link href="/services/kitchen-remodeling" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>🍳 Kitchen Remodeling</Link>
-                  <Link href="/services/bathroom-renovations" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>🛁 Bathroom Renovations</Link>
-                  <Link href="/services/basement-finishing" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>🏠 Basement Finishing</Link>
-                  <Link href="/services/quartz-stonework" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>💎 Quartz &amp; Stonework</Link>
-                  <Link href="/services/full-home-renovation" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>🏗️ Full Home Renovations</Link>
+                  <Link href="/services/kitchen-remodeling" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>Kitchen Remodeling</Link>
+                  <Link href="/services/bathroom-renovations" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>Bathroom Renovations</Link>
+                  <Link href="/services/basement-finishing" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>Basement Finishing</Link>
+                  <Link href="/services/quartz-stonework" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>Quartz &amp; Stonework</Link>
+                  <Link href="/services/full-home-renovation" onClick={() => setDrawerOpen(false)} style={{ color: '#e2e8f0', textDecoration: 'none', fontSize: '0.92rem' }}>Full Home Renovations</Link>
                 </div>
               </div>
             )}
@@ -361,11 +360,11 @@ export default function Header() {
 
           <li><Link href="/projects" onClick={() => setDrawerOpen(false)}>Projects</Link></li>
           <li><Link href="/about" onClick={() => setDrawerOpen(false)}>About</Link></li>
-          <li><Link href="/estimate" onClick={() => setDrawerOpen(false)}>Instant Estimate</Link></li>
+          <li><Link href="/estimate" onClick={() => setDrawerOpen(false)}>Get a Quote</Link></li>
           <li><Link href="/contact" onClick={() => setDrawerOpen(false)}>Contact</Link></li>
         </ul>
         <div className="re-drawer-cta">
-          <a href="tel:+14376054750" className="re-drawer-call">📞 +1 (437) 605-4750</a>
+          <a href="tel:+14376054750" className="re-drawer-call">+1 (437) 605-4750</a>
           <Link href="/estimate" onClick={() => setDrawerOpen(false)} className="re-drawer-quote">Get a Free Quote</Link>
         </div>
       </nav>
