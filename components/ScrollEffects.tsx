@@ -4,32 +4,15 @@ import { useEffect } from 'react';
 
 export default function ScrollEffects() {
   useEffect(() => {
-    // 1. Reveal animations observer
+    // 1. Ensure all reveal elements are immediately visible (prevents disappearing content or black screens on fast scroll)
     const revealEls = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const ro = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('in');
-              ro.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-      );
-
-      revealEls.forEach((el) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          el.classList.add('in');
-        } else {
-          ro.observe(el);
-        }
-      });
-    } else {
-      revealEls.forEach((el) => el.classList.add('in'));
-    }
+    revealEls.forEach((el) => {
+      el.classList.add('in');
+      const htmlEl = el as HTMLElement;
+      htmlEl.style.setProperty('opacity', '1', 'important');
+      htmlEl.style.setProperty('transform', 'none', 'important');
+      htmlEl.style.setProperty('visibility', 'visible', 'important');
+    });
 
     // 2. Number counters
     const counters = document.querySelectorAll('.count[data-to]');
@@ -68,35 +51,39 @@ export default function ScrollEffects() {
     let isFooterActive = false;
 
     const setRoomvoState = (hide: boolean) => {
-      if (isFooterActive === hide) return;
-      isFooterActive = hide;
+      try {
+        if (isFooterActive === hide) return;
+        isFooterActive = hide;
 
-      document.body.classList.toggle('footer-active', hide);
+        document.body.classList.toggle('footer-active', hide);
 
-      const targets: HTMLElement[] = [];
-      const popupEl = document.getElementById('assistantPopup');
-      if (popupEl) targets.push(popupEl);
-      Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
+        const targets: HTMLElement[] = [];
+        const popupEl = document.getElementById('assistantPopup');
+        if (popupEl) targets.push(popupEl);
+        Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
 
-      targets.forEach((el) => {
-        if (hide) {
-          el.style.setProperty('opacity', '0', 'important');
-          el.style.setProperty('visibility', 'hidden', 'important');
-          el.style.setProperty('pointer-events', 'none', 'important');
-          el.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
-          el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
-          el.style.setProperty('z-index', '-9999', 'important');
-        } else {
-          // If drawer is open, keep Roomvo hidden
-          if (document.body.classList.contains('drawer-open')) return;
-          el.style.setProperty('opacity', '1', 'important');
-          el.style.setProperty('visibility', 'visible', 'important');
-          el.style.setProperty('pointer-events', 'all', 'important');
-          el.style.setProperty('transform', 'none', 'important');
-          el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
-          el.style.setProperty('z-index', '2147483646', 'important');
-        }
-      });
+        targets.forEach((el) => {
+          if (hide) {
+            el.style.setProperty('opacity', '0', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('pointer-events', 'none', 'important');
+            el.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
+            el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+            el.style.setProperty('z-index', '-9999', 'important');
+          } else {
+            // If drawer is open, keep Roomvo hidden
+            if (document.body.classList.contains('drawer-open')) return;
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+            el.style.setProperty('pointer-events', 'all', 'important');
+            el.style.setProperty('transform', 'none', 'important');
+            el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+            el.style.setProperty('z-index', '2147483646', 'important');
+          }
+        });
+      } catch {
+        // Safe fallback
+      }
     };
 
     const footer = document.getElementById('site-footer');

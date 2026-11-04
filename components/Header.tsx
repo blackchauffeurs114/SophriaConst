@@ -26,41 +26,53 @@ export default function Header() {
 
   // Sync drawer-open class to body and hide Roomvo widget when menu is open
   useEffect(() => {
-    if (drawerOpen) {
-      document.body.classList.add('drawer-open');
-    } else {
-      document.body.classList.remove('drawer-open');
-    }
-
-    const targets: HTMLElement[] = [];
-    const popupEl = document.getElementById('assistantPopup');
-    if (popupEl) targets.push(popupEl);
-    Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
-
-    targets.forEach((popup) => {
+    try {
       if (drawerOpen) {
-        popup.style.setProperty('opacity', '0', 'important');
-        popup.style.setProperty('visibility', 'hidden', 'important');
-        popup.style.setProperty('pointer-events', 'none', 'important');
-        popup.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
-        popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
-        popup.style.setProperty('z-index', '-9999', 'important');
+        document.body.classList.add('drawer-open');
       } else {
-        if (!document.body.classList.contains('footer-active')) {
-          popup.style.setProperty('opacity', '1', 'important');
-          popup.style.setProperty('visibility', 'visible', 'important');
-          popup.style.setProperty('pointer-events', 'all', 'important');
-          popup.style.setProperty('transform', 'none', 'important');
-          popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
-          popup.style.setProperty('z-index', '2147483646', 'important');
-        }
+        document.body.classList.remove('drawer-open');
       }
-    });
+
+      const targets: HTMLElement[] = [];
+      const popupEl = document.getElementById('assistantPopup');
+      if (popupEl) targets.push(popupEl);
+      Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
+
+      targets.forEach((popup) => {
+        if (drawerOpen) {
+          popup.style.setProperty('opacity', '0', 'important');
+          popup.style.setProperty('visibility', 'hidden', 'important');
+          popup.style.setProperty('pointer-events', 'none', 'important');
+          popup.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
+          popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+          popup.style.setProperty('z-index', '-9999', 'important');
+        } else {
+          if (!document.body.classList.contains('footer-active')) {
+            popup.style.setProperty('opacity', '1', 'important');
+            popup.style.setProperty('visibility', 'visible', 'important');
+            popup.style.setProperty('pointer-events', 'all', 'important');
+            popup.style.setProperty('transform', 'none', 'important');
+            popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+            popup.style.setProperty('z-index', '2147483646', 'important');
+          }
+        }
+      });
+    } catch {
+      // Safe fallback
+    }
 
     return () => {
       document.body.classList.remove('drawer-open');
     };
   }, [drawerOpen]);
+
+  const handleDrawerToggle = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+    if (e.type === 'touchend') {
+      e.preventDefault();
+    }
+    setDrawerOpen(prev => !prev);
+  };
 
   return (
     <header className="re-site-header" id="site-header">
@@ -73,10 +85,18 @@ export default function Header() {
           aria-label="Toggle navigation"
           aria-expanded={drawerOpen}
           aria-controls="mobileDrawer"
-          onClick={() => setDrawerOpen(!drawerOpen)}
+          onClick={handleDrawerToggle}
+          onTouchEnd={handleDrawerToggle}
+          style={{
+            touchAction: 'manipulation',
+            cursor: 'pointer',
+            pointerEvents: 'auto',
+            zIndex: 100,
+            WebkitTapHighlightColor: 'transparent',
+          }}
         >
-          <span className="re-menu-line"></span>
-          <span className="re-menu-line"></span>
+          <span className="re-menu-line" style={{ pointerEvents: 'none' }}></span>
+          <span className="re-menu-line" style={{ pointerEvents: 'none' }}></span>
         </button>
 
         {/* Desktop Nav Left */}
