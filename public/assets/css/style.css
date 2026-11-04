@@ -60996,3 +60996,20 @@ body[data-page="home"] .hero__fade {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
   }
 }
+
+
+/* Mobile Menu Button Reliability */
+.re-menu-btn {
+  touch-action: manipulation !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  z-index: 100 !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+.re-menu-line {
+  pointer-events: none !important;
+}
+.re-mobile-drawer.open {
+  z-index: 2147483647 !important;
+  pointer-events: auto !important;
+}

@@ -35,10 +35,19 @@ export default function Header() {
           aria-label="Toggle navigation"
           aria-expanded={drawerOpen}
           aria-controls="mobileDrawer"
-          onClick={() => setDrawerOpen(!drawerOpen)}
+          onClick={(e) => { e.stopPropagation(); setDrawerOpen(prev => !prev); }}
+          onTouchEnd={(e) => { e.stopPropagation(); e.preventDefault(); setDrawerOpen(prev => !prev); }}
+          style={{
+            touchAction: 'manipulation',
+            cursor: 'pointer',
+            pointerEvents: 'auto',
+            position: 'relative',
+            zIndex: 100,
+            WebkitTapHighlightColor: 'transparent',
+          }}
         >
-          <span className="re-menu-line"></span>
-          <span className="re-menu-line"></span>
+          <span className="re-menu-line" style={{ pointerEvents: 'none' }}></span>
+          <span className="re-menu-line" style={{ pointerEvents: 'none' }}></span>
         </button>
 
         {/* Desktop Nav Left */}
@@ -303,7 +312,7 @@ export default function Header() {
         className={`re-mobile-drawer ${drawerOpen ? 'open' : ''}`}
         id="mobileDrawer"
         aria-label="Mobile navigation"
-        style={drawerOpen ? { display: 'block', opacity: 1, pointerEvents: 'auto' } : undefined}
+        style={drawerOpen ? { display: 'block', opacity: 1, visibility: 'visible', pointerEvents: 'auto', zIndex: 2147483647 } : { display: 'none', opacity: 0, visibility: 'hidden', pointerEvents: 'none' }}
       >
         <ul className="re-drawer-links">
           <li><Link href="/" onClick={() => setDrawerOpen(false)} className="active">Home</Link></li>
