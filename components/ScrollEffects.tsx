@@ -76,9 +76,7 @@ export default function ScrollEffects() {
       const targets: HTMLElement[] = [];
       const popupEl = document.getElementById('assistantPopup');
       if (popupEl) targets.push(popupEl);
-      Array.from(document.querySelectorAll('iframe[src*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
-      Array.from(document.querySelectorAll('iframe[title*="Roomvo"]')).forEach(el => targets.push(el as HTMLElement));
-      Array.from(document.querySelectorAll('[id*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+      Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
 
       targets.forEach((el) => {
         if (hide) {
@@ -119,12 +117,17 @@ export default function ScrollEffects() {
     // Scroll listener backup (pure math, requestAnimationFrame, zero CPU)
     let ticking = false;
     const checkScrollPosition = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const windowH = window.innerHeight;
-      const docH = document.documentElement.scrollHeight;
-      // When user is within 650px of bottom (covering footer)
-      const nearBottom = scrollY + windowH >= docH - 650;
-      setRoomvoState(nearBottom);
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        const nearBottom = rect.top <= (window.innerHeight + 50);
+        setRoomvoState(nearBottom);
+      } else {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const windowH = window.innerHeight;
+        const docH = document.documentElement.scrollHeight;
+        const nearBottom = scrollY + windowH >= docH - 650;
+        setRoomvoState(nearBottom);
+      }
       ticking = false;
     };
 

@@ -35,9 +35,7 @@ export default function Header() {
     const targets: HTMLElement[] = [];
     const popupEl = document.getElementById('assistantPopup');
     if (popupEl) targets.push(popupEl);
-    Array.from(document.querySelectorAll('iframe[src*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
-    Array.from(document.querySelectorAll('iframe[title*="Roomvo"]')).forEach(el => targets.push(el as HTMLElement));
-    Array.from(document.querySelectorAll('[id*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+    Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
 
     targets.forEach((popup) => {
       if (drawerOpen) {
@@ -338,12 +336,32 @@ export default function Header() {
         <div className="re-pill-spacer" aria-hidden="true"></div>
       </div>
 
-      {/* Mobile Drawer with Accordion Dropdowns */}
+      {/* Mobile Drawer with Accordion Dropdowns - Fully scrollable when open, completely invisible & non-blocking when closed */}
       <nav
         className={`re-mobile-drawer ${drawerOpen ? 'open' : ''}`}
         id="mobileDrawer"
         aria-label="Mobile navigation"
-        style={drawerOpen ? { display: 'block', opacity: 1, pointerEvents: 'auto', zIndex: 2147483647 } : { zIndex: 2147483647 }}
+        style={
+          drawerOpen
+            ? {
+                display: 'block',
+                opacity: 1,
+                visibility: 'visible',
+                pointerEvents: 'auto',
+                zIndex: 2147483647,
+                maxHeight: 'calc(100vh - 96px)',
+                overflowY: 'auto',
+                WebkitOverflowScrolling: 'touch',
+                touchAction: 'pan-y',
+              }
+            : {
+                display: 'none',
+                opacity: 0,
+                visibility: 'hidden',
+                pointerEvents: 'none',
+                zIndex: -9999,
+              }
+        }
       >
         <ul className="re-drawer-links">
           <li><Link href="/" onClick={() => setDrawerOpen(false)} className="active">Home</Link></li>

@@ -60997,13 +60997,82 @@ body[data-page="home"] .hero__fade {
 }
 
 /* ========================================================
+   BULLETPROOF MOBILE TOUCH SCROLLING & HORIZONTAL PROTECTION
+   ======================================================== */
+html {
+  overflow-x: clip !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+body {
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+  height: auto !important;
+  min-height: 100% !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+/* ========================================================
+   MOBILE DRAWER: FULLY SCROLLABLE & NON-BLOCKING
+   ======================================================== */
+.re-mobile-drawer {
+  position: fixed !important;
+  top: 76px !important;
+  left: 14px !important;
+  right: 14px !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
+  background: rgba(8, 14, 28, 0.96) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 24px !important;
+  backdrop-filter: blur(28px) !important;
+  -webkit-backdrop-filter: blur(28px) !important;
+  padding: 24px 20px !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.75) !important;
+  max-height: calc(100vh - 96px) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+  box-sizing: border-box !important;
+}
+
+.re-mobile-drawer:not(.open) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+}
+
+.re-mobile-drawer.open {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 2147483647 !important;
+  animation: reDrawerFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+body.drawer-open .re-site-header {
+  z-index: 2147483647 !important;
+}
+
+/* ========================================================
    ROOMVO AI WIDGET VISIBILITY & MOBILE DRAWER INTEGRATION
    ======================================================== */
 #assistantPopup,
 iframe[src*="roomvo"],
 iframe[title*="Roomvo"],
-[id*="roomvo"],
-[id*="assistant"] {
+div[id*="roomvo"],
+div[class*="roomvo"],
+launch-sequence {
   transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
 }
 
@@ -61011,8 +61080,9 @@ iframe[title*="Roomvo"],
 body.drawer-open #assistantPopup,
 body.drawer-open iframe[src*="roomvo"],
 body.drawer-open iframe[title*="Roomvo"],
-body.drawer-open [id*="roomvo"],
-body.drawer-open [id*="assistant"] {
+body.drawer-open div[id*="roomvo"],
+body.drawer-open div[class*="roomvo"],
+body.drawer-open launch-sequence {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
@@ -61024,18 +61094,12 @@ body.drawer-open [id*="assistant"] {
 body.footer-active #assistantPopup,
 body.footer-active iframe[src*="roomvo"],
 body.footer-active iframe[title*="Roomvo"],
-body.footer-active [id*="roomvo"],
-body.footer-active [id*="assistant"] {
+body.footer-active div[id*="roomvo"],
+body.footer-active div[class*="roomvo"],
+body.footer-active launch-sequence {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
   transform: translateY(40px) scale(0.85) !important;
   z-index: -9999 !important;
-}
-
-.re-mobile-drawer {
-  z-index: 2147483647 !important;
-}
-body.drawer-open .re-site-header {
-  z-index: 2147483647 !important;
 }
