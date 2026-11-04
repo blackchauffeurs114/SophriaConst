@@ -95,7 +95,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SECTION 1: SPECIALIZED COMMERCIAL FLOORING SYSTEMS */}
-      <section style={{ padding: '90px 1.5rem 60px', maxWidth: '1240px', margin: '0 auto' }}>
+      <section className="page-section-pad" style={{ maxWidth: '1240px', margin: '0 auto', width: '100%' }}>
         <div style={{ marginBottom: '50px' }}>
           <span
             style={{
@@ -126,7 +126,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
+        <div className="responsive-card-grid">
           {flooringList.map((svc, idx) => (
             <div
               key={svc.slug}
@@ -236,7 +236,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
+          <div className="responsive-card-grid">
             {renovationList.map((svc, idx) => (
               <div
                 key={svc.slug}

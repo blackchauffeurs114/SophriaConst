@@ -45,8 +45,8 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Grid: Form + Info Cards */}
-      <section style={{ padding: '20px 1.5rem 100px', maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
+      <section className="page-section-pad" style={{ maxWidth: '1240px', margin: '0 auto', width: '100%' }}>
+        <div className="responsive-split-grid">
           
           {/* Form Card */}
           <div style={{ background: 'linear-gradient(160deg, rgba(16, 28, 58, 0.75), rgba(8, 15, 34, 0.65))', border: '1px solid rgba(156, 194, 251, 0.2)', borderRadius: '24px', padding: '40px 32px', boxShadow: '0 20px 50px rgba(0,0,0,0.5)' }}>

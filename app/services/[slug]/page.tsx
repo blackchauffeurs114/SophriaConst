@@ -139,8 +139,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* Main Content Split: Overview, Narrative, Specs, Best For */}
-      <section style={{ padding: '80px 1.5rem 100px', maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '60px', alignItems: 'start' }}>
+      <section className="page-section-pad" style={{ maxWidth: '1240px', margin: '0 auto', width: '100%' }}>
+        <div className="responsive-split-grid">
           
           {/* Left Column: Narrative Paragraphs */}
           <div>
@@ -327,7 +327,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* Explore Other Services */}
-      <section style={{ padding: '60px 1.5rem 80px', background: 'rgba(8, 15, 34, 0.5)', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
+      <section className="page-section-pad" style={{ background: 'rgba(8, 15, 34, 0.5)', borderTop: '1px solid rgba(255, 255, 255, 0.06)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '36px', flexWrap: 'wrap', gap: '14px' }}>
             <div>
@@ -343,7 +343,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </Link>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          <div className="responsive-card-grid">
             {otherServices.map((item) => (
               <Link
                 key={item.slug}

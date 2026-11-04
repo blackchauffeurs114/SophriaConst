@@ -88,8 +88,8 @@ export default function EstimatePage() {
       </section>
 
       {/* Main Dual-Form Section (Exact Homepage System) */}
-      <section style={{ padding: '80px 1.5rem 100px', maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'start' }}>
+      <section className="page-section-pad" style={{ maxWidth: '1240px', margin: '0 auto', width: '100%' }}>
+        <div className="responsive-split-grid">
           
           {/* Left Column: Direct Info + Quick 30-min Callback Form */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>

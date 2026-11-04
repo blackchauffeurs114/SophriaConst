@@ -153,8 +153,8 @@ export default function ProjectsPage() {
       <BeforeAfterSlider />
 
       {/* Projects Showcase Grid */}
-      <section style={{ padding: '80px 1.5rem 100px', background: '#05080d' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      <section className="page-section-pad" style={{ background: '#05080d' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <span style={{ color: '#83c0ff', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '0.5rem' }}>
               RECENT HANDOVERS
@@ -220,7 +220,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '30px' }}>
+          <div className="responsive-card-grid">
             {filteredProjects.map((proj, idx) => (
               <div
                 key={idx}
@@ -234,6 +234,8 @@ export default function ProjectsPage() {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   transition: 'transform 0.3s ease, border-color 0.3s ease',
+                  width: '100%',
+                  boxSizing: 'border-box',
                 }}
               >
                 <div>

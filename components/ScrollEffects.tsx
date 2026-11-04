@@ -1,11 +1,16 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function ScrollEffects() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    // Reveal animations observer
+    // Reveal animations observer - immediately reveal all elements so no content is ever hidden
     const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach((el) => el.classList.add('in'));
+
     if ('IntersectionObserver' in window) {
       const ro = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
@@ -14,19 +19,11 @@ export default function ScrollEffects() {
             ro.unobserve(e.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
       revealEls.forEach((el) => {
-        // If element is already in viewport, mark in immediately
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          el.classList.add('in');
-        } else {
-          ro.observe(el);
-        }
+        ro.observe(el);
       });
-    } else {
-      revealEls.forEach((el) => el.classList.add('in'));
     }
 
     // Number counters
@@ -55,10 +52,12 @@ export default function ScrollEffects() {
             co.unobserve(e.target);
           }
         });
-      }, { threshold: 0.3 });
+      }, { threshold: 0.2 });
       counters.forEach((el) => co.observe(el));
+    } else {
+      counters.forEach(animateCount);
     }
-  }, []);
+  }, [pathname]);
 
   return null;
 }

@@ -87,8 +87,8 @@ export default function AboutPage() {
       </section>
 
       {/* Origin Story Split Section */}
-      <section style={{ padding: '100px 1.5rem', maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '60px', alignItems: 'center' }}>
+      <section className="page-section-pad" style={{ maxWidth: '1240px', margin: '0 auto', width: '100%' }}>
+        <div className="responsive-split-grid" style={{ alignItems: 'center' }}>
           <div>
             <span style={{ color: '#83c0ff', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>
               OUR STORY
@@ -129,7 +129,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4 Pillars of Excellence */}
-      <section style={{ padding: '80px 1.5rem 120px', background: 'rgba(8, 15, 34, 0.5)' }}>
+      <section className="page-section-pad" style={{ background: 'rgba(8, 15, 34, 0.5)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <span style={{ color: '#83c0ff', fontSize: '0.82rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '0.75rem' }}>
@@ -140,7 +140,7 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '28px' }}>
+          <div className="responsive-card-grid">
             {pillars.map((p, idx) => (
               <div
                 key={idx}
