@@ -61000,37 +61000,62 @@ body[data-page="home"] .hero__fade {
 /* ========================================================
    ROOMVO AI WIDGET: SMOOTH FOOTER FADE & DRAWER VISIBILITY
    ======================================================== */
-launch-sequence,
+@keyframes roomvoForceHide {
+  0%, 100% {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transform: translateY(40px) scale(0.85) !important;
+    z-index: -1 !important;
+  }
+}
+
+#assistantPopup,
+iframe#assistantPopup,
 iframe[src*="roomvo"],
 [class*="roomvo"],
+launch-sequence,
 #roomvoAssistant {
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  z-index: 990 !important;
 }
 
 /* Smooth fade out when approaching footer so bottom text is visible */
-body.hide-roomvo launch-sequence,
+body.hide-roomvo #assistantPopup,
+body.hide-roomvo iframe#assistantPopup,
 body.hide-roomvo iframe[src*="roomvo"],
 body.hide-roomvo [class*="roomvo"],
+body.hide-roomvo launch-sequence,
+html body.hide-roomvo #assistantPopup,
+html body.hide-roomvo iframe#assistantPopup,
 html body.hide-roomvo launch-sequence {
+  animation: roomvoForceHide 0.01s forwards !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  transform: translateY(28px) scale(0.92) !important;
+  transform: translateY(35px) scale(0.85) !important;
+  z-index: -1 !important;
 }
 
-/* When mobile menu drawer is open: put behind or hide so menu items are 100% visible */
-body.drawer-open launch-sequence,
+/* When mobile menu drawer is open: completely hide Roomvo widget */
+body.drawer-open #assistantPopup,
+body.drawer-open iframe#assistantPopup,
 body.drawer-open iframe[src*="roomvo"],
 body.drawer-open [class*="roomvo"],
+body.drawer-open launch-sequence,
+html body.drawer-open #assistantPopup,
+html body.drawer-open iframe#assistantPopup,
 html body.drawer-open launch-sequence {
+  animation: roomvoForceHide 0.01s forwards !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
-  z-index: 10 !important;
-  transform: scale(0.9) !important;
+  z-index: -1 !important;
+  transform: translateY(35px) scale(0.85) !important;
 }
 
 .re-mobile-drawer {
-  z-index: 10005 !important;
+  z-index: 2147483647 !important;
+}
+body.drawer-open .re-site-header {
+  z-index: 2147483647 !important;
 }

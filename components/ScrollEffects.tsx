@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function ScrollEffects() {
   useEffect(() => {
-    // Reveal animations observer
+    // 1. Reveal animations observer
     const revealEls = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       const ro = new IntersectionObserver((entries) => {
@@ -17,7 +17,6 @@ export default function ScrollEffects() {
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
       revealEls.forEach((el) => {
-        // If element is already in viewport, mark in immediately
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
           el.classList.add('in');
@@ -29,7 +28,7 @@ export default function ScrollEffects() {
       revealEls.forEach((el) => el.classList.add('in'));
     }
 
-    // Number counters
+    // 2. Number counters
     const counters = document.querySelectorAll('.count[data-to]');
     const animateCount = (el: Element) => {
       const to = parseFloat(el.getAttribute('data-to') || '0');
@@ -59,41 +58,123 @@ export default function ScrollEffects() {
       counters.forEach((el) => co.observe(el));
     }
 
-    // Smooth fade for Roomvo AI widget when scrolling to footer
-    const footerEl = document.getElementById('site-footer');
-    if (footerEl && 'IntersectionObserver' in window) {
-      const footerObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              document.body.classList.add('hide-roomvo');
-            } else {
-              document.body.classList.remove('hide-roomvo');
-            }
-          });
-        },
-        { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
+    // 3. MASTER ROOMVO AI CONTROLLER: Smooth footer fade & drawer hide
+    const getRoomvoElements = (): HTMLElement[] => {
+      const elements: HTMLElement[] = [];
+      const popup = document.getElementById('assistantPopup');
+      if (popup) elements.push(popup);
+      const iframes = document.querySelectorAll<HTMLElement>(
+        'iframe[src*="roomvo"], iframe[title*="Roomvo"], iframe[aria-label*="Roomvo"]'
       );
-      footerObserver.observe(footerEl);
-    }
+      iframes.forEach((f) => {
+        if (!elements.includes(f)) elements.push(f);
+      });
+      const customEls = document.querySelectorAll<HTMLElement>(
+        'launch-sequence, [class*="roomvo"], [id*="roomvo"], [id*="Roomvo"]'
+      );
+      customEls.forEach((l) => {
+        if (!elements.includes(l)) elements.push(l);
+      });
+      return elements;
+    };
 
-    // Scroll listener fallback for smooth fade
-    const handleScroll = () => {
+    const isNearFooter = (): boolean => {
+      const scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+      const windowH = window.innerHeight || document.documentElement.clientHeight || 0;
+      const docH = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+      );
+
+      // Within 260px of the very bottom of the document
+      if (scrollY + windowH >= docH - 260) {
+        return true;
+      }
+
+      // Or if footer enters lower viewport
       const footer = document.getElementById('site-footer');
-      if (!footer) return;
-      const rect = footer.getBoundingClientRect();
-      // When footer approaches bottom of viewport
-      if (rect.top <= window.innerHeight - 60) {
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        if (rect.top <= windowH - 120) {
+          return true;
+        }
+      }
+
+      return false;
+    };
+
+    const syncRoomvoVisibility = () => {
+      const isDrawerOpen = document.body.classList.contains('drawer-open');
+      const nearFooter = isNearFooter();
+      const shouldHide = isDrawerOpen || nearFooter;
+
+      if (nearFooter) {
         document.body.classList.add('hide-roomvo');
       } else {
         document.body.classList.remove('hide-roomvo');
       }
+
+      const els = getRoomvoElements();
+      els.forEach((el) => {
+        if (shouldHide) {
+          el.style.setProperty('opacity', '0', 'important');
+          el.style.setProperty('visibility', 'hidden', 'important');
+          el.style.setProperty('pointer-events', 'none', 'important');
+          el.style.setProperty('transform', 'translateY(35px) scale(0.85)', 'important');
+          el.style.setProperty(
+            'transition',
+            'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease',
+            'important'
+          );
+          el.style.setProperty('z-index', '-1', 'important');
+        } else {
+          el.style.setProperty('opacity', '1', 'important');
+          el.style.setProperty('visibility', 'visible', 'important');
+          el.style.setProperty('pointer-events', 'all', 'important');
+          el.style.setProperty('transform', 'translateY(0) scale(1)', 'important');
+          el.style.setProperty(
+            'transition',
+            'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease',
+            'important'
+          );
+          el.style.setProperty('z-index', '2147483646', 'important');
+        }
+      });
     };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+
+    // Event listeners
+    window.addEventListener('scroll', syncRoomvoVisibility, { passive: true });
+    window.addEventListener('resize', syncRoomvoVisibility, { passive: true });
+
+    // MutationObserver to watch for when Roomvo injects or body class changes
+    const mutationObserver = new MutationObserver(() => {
+      syncRoomvoVisibility();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
+    // Check periodically during first 15 seconds to ensure Roomvo is caught
+    const intervalId = setInterval(syncRoomvoVisibility, 400);
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+    }, 15000);
+
+    // Initial sync
+    syncRoomvoVisibility();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', syncRoomvoVisibility);
+      window.removeEventListener('resize', syncRoomvoVisibility);
+      mutationObserver.disconnect();
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
     };
   }, []);
 
