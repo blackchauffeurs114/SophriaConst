@@ -64,32 +64,41 @@ export default function ScrollEffects() {
       counters.forEach((el) => co.observe(el));
     }
 
-    // 3. Roomvo Footer Smooth Fade (Native IntersectionObserver: zero CPU, zero freeze)
-    let isHidden = false;
+    // 3. Roomvo Footer Smooth Fade (Native IntersectionObserver + passive scroll: zero CPU, zero freeze)
+    let isFooterActive = false;
 
-    const setRoomvoHidden = (hide: boolean) => {
-      if (isHidden === hide) return;
-      isHidden = hide;
-      const popup =
-        (document.getElementById('assistantPopup') as HTMLElement | null) ||
-        (document.querySelector('iframe[src*="roomvo"]') as HTMLElement | null);
-      if (!popup) return;
+    const setRoomvoState = (hide: boolean) => {
+      if (isFooterActive === hide) return;
+      isFooterActive = hide;
 
-      if (hide) {
-        popup.style.setProperty('opacity', '0', 'important');
-        popup.style.setProperty('visibility', 'hidden', 'important');
-        popup.style.setProperty('pointer-events', 'none', 'important');
-        popup.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
-        popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
-        popup.style.setProperty('z-index', '-1', 'important');
-      } else {
-        popup.style.setProperty('opacity', '1', 'important');
-        popup.style.setProperty('visibility', 'visible', 'important');
-        popup.style.setProperty('pointer-events', 'all', 'important');
-        popup.style.setProperty('transform', 'none', 'important');
-        popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
-        popup.style.setProperty('z-index', '2147483646', 'important');
-      }
+      document.body.classList.toggle('footer-active', hide);
+
+      const targets: HTMLElement[] = [];
+      const popupEl = document.getElementById('assistantPopup');
+      if (popupEl) targets.push(popupEl);
+      Array.from(document.querySelectorAll('iframe[src*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+      Array.from(document.querySelectorAll('iframe[title*="Roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+      Array.from(document.querySelectorAll('[id*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+
+      targets.forEach((el) => {
+        if (hide) {
+          el.style.setProperty('opacity', '0', 'important');
+          el.style.setProperty('visibility', 'hidden', 'important');
+          el.style.setProperty('pointer-events', 'none', 'important');
+          el.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
+          el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+          el.style.setProperty('z-index', '-9999', 'important');
+        } else {
+          // If drawer is open, keep Roomvo hidden
+          if (document.body.classList.contains('drawer-open')) return;
+          el.style.setProperty('opacity', '1', 'important');
+          el.style.setProperty('visibility', 'visible', 'important');
+          el.style.setProperty('pointer-events', 'all', 'important');
+          el.style.setProperty('transform', 'none', 'important');
+          el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+          el.style.setProperty('z-index', '2147483646', 'important');
+        }
+      });
     };
 
     const footer = document.getElementById('site-footer');
@@ -99,17 +108,38 @@ export default function ScrollEffects() {
       footerIO = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            // When footer is visible, smoothly fade out Roomvo
-            setRoomvoHidden(entry.isIntersecting);
+            setRoomvoState(entry.isIntersecting);
           });
         },
-        { threshold: 0.05, rootMargin: '0px 0px 50px 0px' }
+        { threshold: 0.01, rootMargin: '0px 0px 80px 0px' }
       );
       footerIO.observe(footer);
     }
 
+    // Scroll listener backup (pure math, requestAnimationFrame, zero CPU)
+    let ticking = false;
+    const checkScrollPosition = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const windowH = window.innerHeight;
+      const docH = document.documentElement.scrollHeight;
+      // When user is within 650px of bottom (covering footer)
+      const nearBottom = scrollY + windowH >= docH - 650;
+      setRoomvoState(nearBottom);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(checkScrollPosition);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
     return () => {
       if (footerIO && footer) footerIO.unobserve(footer);
+      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 

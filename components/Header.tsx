@@ -32,31 +32,32 @@ export default function Header() {
       document.body.classList.remove('drawer-open');
     }
 
-    const popup =
-      (document.getElementById('assistantPopup') as HTMLElement | null) ||
-      (document.querySelector('iframe[src*="roomvo"]') as HTMLElement | null);
+    const targets: HTMLElement[] = [];
+    const popupEl = document.getElementById('assistantPopup');
+    if (popupEl) targets.push(popupEl);
+    Array.from(document.querySelectorAll('iframe[src*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+    Array.from(document.querySelectorAll('iframe[title*="Roomvo"]')).forEach(el => targets.push(el as HTMLElement));
+    Array.from(document.querySelectorAll('[id*="roomvo"]')).forEach(el => targets.push(el as HTMLElement));
 
-    if (popup) {
+    targets.forEach((popup) => {
       if (drawerOpen) {
         popup.style.setProperty('opacity', '0', 'important');
         popup.style.setProperty('visibility', 'hidden', 'important');
         popup.style.setProperty('pointer-events', 'none', 'important');
         popup.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
-        popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
-        popup.style.setProperty('z-index', '-1', 'important');
+        popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
+        popup.style.setProperty('z-index', '-9999', 'important');
       } else {
-        const footer = document.getElementById('site-footer');
-        const nearFooter = footer && (footer.getBoundingClientRect().top < window.innerHeight);
-        if (!nearFooter) {
+        if (!document.body.classList.contains('footer-active')) {
           popup.style.setProperty('opacity', '1', 'important');
           popup.style.setProperty('visibility', 'visible', 'important');
           popup.style.setProperty('pointer-events', 'all', 'important');
           popup.style.setProperty('transform', 'none', 'important');
-          popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
+          popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
           popup.style.setProperty('z-index', '2147483646', 'important');
         }
       }
-    }
+    });
 
     return () => {
       document.body.classList.remove('drawer-open');

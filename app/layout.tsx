@@ -99,6 +99,8 @@ export default function RootLayout({
           data-position="bottom-right"
           src="https://www.roomvo.com/static/scripts/b2b/common/assistant.js"
         ></script>
+        {/* Build Cache Buster v1.0.1 */}
+        <meta name="build-version" content="1.0.1-roomvo-drawer-footer-fix" />
       </head>
       <body data-page="home">
         <ScrollEffects />

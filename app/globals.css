@@ -60997,10 +60997,40 @@ body[data-page="home"] .hero__fade {
 }
 
 /* ========================================================
-   ROOMVO AI WIDGET & MOBILE DRAWER Z-INDEX
+   ROOMVO AI WIDGET VISIBILITY & MOBILE DRAWER INTEGRATION
    ======================================================== */
-#assistantPopup {
+#assistantPopup,
+iframe[src*="roomvo"],
+iframe[title*="Roomvo"],
+[id*="roomvo"],
+[id*="assistant"] {
   transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
+}
+
+/* 1. When Mobile Drawer is open: hide Roomvo behind menu */
+body.drawer-open #assistantPopup,
+body.drawer-open iframe[src*="roomvo"],
+body.drawer-open iframe[title*="Roomvo"],
+body.drawer-open [id*="roomvo"],
+body.drawer-open [id*="assistant"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(40px) scale(0.85) !important;
+  z-index: -9999 !important;
+}
+
+/* 2. When scrolled to footer: smooth fade out to reveal footer text */
+body.footer-active #assistantPopup,
+body.footer-active iframe[src*="roomvo"],
+body.footer-active iframe[title*="Roomvo"],
+body.footer-active [id*="roomvo"],
+body.footer-active [id*="assistant"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(40px) scale(0.85) !important;
+  z-index: -9999 !important;
 }
 
 .re-mobile-drawer {
