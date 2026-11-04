@@ -58,6 +58,43 @@ export default function ScrollEffects() {
       }, { threshold: 0.3 });
       counters.forEach((el) => co.observe(el));
     }
+
+    // Smooth fade for Roomvo AI widget when scrolling to footer
+    const footerEl = document.getElementById('site-footer');
+    if (footerEl && 'IntersectionObserver' in window) {
+      const footerObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              document.body.classList.add('hide-roomvo');
+            } else {
+              document.body.classList.remove('hide-roomvo');
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
+      );
+      footerObserver.observe(footerEl);
+    }
+
+    // Scroll listener fallback for smooth fade
+    const handleScroll = () => {
+      const footer = document.getElementById('site-footer');
+      if (!footer) return;
+      const rect = footer.getBoundingClientRect();
+      // When footer approaches bottom of viewport
+      if (rect.top <= window.innerHeight - 60) {
+        document.body.classList.add('hide-roomvo');
+      } else {
+        document.body.classList.remove('hide-roomvo');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return null;

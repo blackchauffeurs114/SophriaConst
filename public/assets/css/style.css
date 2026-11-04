@@ -60996,3 +60996,41 @@ body[data-page="home"] .hero__fade {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
   }
 }
+
+/* ========================================================
+   ROOMVO AI WIDGET: SMOOTH FOOTER FADE & DRAWER VISIBILITY
+   ======================================================== */
+launch-sequence,
+iframe[src*="roomvo"],
+[class*="roomvo"],
+#roomvoAssistant {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 990 !important;
+}
+
+/* Smooth fade out when approaching footer so bottom text is visible */
+body.hide-roomvo launch-sequence,
+body.hide-roomvo iframe[src*="roomvo"],
+body.hide-roomvo [class*="roomvo"],
+html body.hide-roomvo launch-sequence {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(28px) scale(0.92) !important;
+}
+
+/* When mobile menu drawer is open: put behind or hide so menu items are 100% visible */
+body.drawer-open launch-sequence,
+body.drawer-open iframe[src*="roomvo"],
+body.drawer-open [class*="roomvo"],
+html body.drawer-open launch-sequence {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  transform: scale(0.9) !important;
+}
+
+.re-mobile-drawer {
+  z-index: 10005 !important;
+}

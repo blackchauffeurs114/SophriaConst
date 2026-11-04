@@ -24,6 +24,18 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Sync drawer-open class to body to hide Roomvo widget when menu is open
+  useEffect(() => {
+    if (drawerOpen) {
+      document.body.classList.add('drawer-open');
+    } else {
+      document.body.classList.remove('drawer-open');
+    }
+    return () => {
+      document.body.classList.remove('drawer-open');
+    };
+  }, [drawerOpen]);
+
   return (
     <header className="re-site-header" id="site-header">
       <div className="re-pill-container">
@@ -303,7 +315,7 @@ export default function Header() {
         className={`re-mobile-drawer ${drawerOpen ? 'open' : ''}`}
         id="mobileDrawer"
         aria-label="Mobile navigation"
-        style={drawerOpen ? { display: 'block', opacity: 1, pointerEvents: 'auto' } : undefined}
+        style={drawerOpen ? { display: 'block', opacity: 1, pointerEvents: 'auto', zIndex: 10005 } : { zIndex: 10005 }}
       >
         <ul className="re-drawer-links">
           <li><Link href="/" onClick={() => setDrawerOpen(false)} className="active">Home</Link></li>
