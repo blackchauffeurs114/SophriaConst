@@ -63,7 +63,7 @@ export default function BeforeAfterSlider() {
             <div className="ba-before">
               <picture>
                 <source srcSet="/assets/ba-after.webp" type="image/webp" />
-                <img src="/assets/ba-after.jpg" alt="Modern luxury dining and living space after full renovation" loading="lazy" />
+                <img src="/assets/ba-after.jpg" alt="Modern luxury dining and living space after full renovation" width={1200} height={800} loading="lazy" />
               </picture>
             </div>
             <div className="ba-after" style={{ width: `${sliderPos}%` }}>
@@ -73,6 +73,8 @@ export default function BeforeAfterSlider() {
                   ref={afterImgRef}
                   src="/assets/ba-before.jpg"
                   alt="Traditional dining room before renovation"
+                  width={1200}
+                  height={800}
                   loading="lazy"
                   onLoad={updateFit}
                 />

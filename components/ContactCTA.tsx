@@ -63,20 +63,20 @@ export default function ContactCTA() {
             <h3>Request a Consultation</h3>
             <div className="row2">
               <div className="field">
-                <label>Full Name</label>
-                <input type="text" name="name" id="hcf-name" required placeholder="Your name" />
+                <label htmlFor="hcf-name">Full Name</label>
+                <input type="text" name="name" id="hcf-name" autoComplete="name" required placeholder="Your name" />
               </div>
               <div className="field">
-                <label>Phone</label>
-                <input type="tel" name="phone" id="hcf-phone" required placeholder="(437) 000-0000" />
+                <label htmlFor="hcf-phone">Phone</label>
+                <input type="tel" name="phone" id="hcf-phone" autoComplete="tel" required placeholder="(437) 000-0000" />
               </div>
             </div>
             <div className="field">
-              <label>Email</label>
-              <input type="email" name="email" id="hcf-email" required placeholder="you@email.com" />
+              <label htmlFor="hcf-email">Email</label>
+              <input type="email" name="email" id="hcf-email" autoComplete="email" required placeholder="you@email.com" />
             </div>
             <div className="field">
-              <label>Project Type</label>
+              <label htmlFor="hcf-type">Project Type</label>
               <select name="type" id="hcf-type" defaultValue="Flooring">
                 <option value="Terrazzo Flooring">Terrazzo Flooring</option>
                 <option value="VCT Flooring">VCT Flooring</option>
@@ -93,7 +93,7 @@ export default function ContactCTA() {
               </select>
             </div>
             <div className="field">
-              <label>Tell us about your project</label>
+              <label htmlFor="hcf-message">Tell us about your project</label>
               <textarea name="message" id="hcf-message" placeholder="Location, scope, timeline, vision…"></textarea>
             </div>
             <button type="submit" id="hcf-btn" className="bts-cta-btn" style={{ width: '100%', textAlign: 'center' }}>
