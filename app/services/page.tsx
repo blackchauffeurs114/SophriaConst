@@ -10,8 +10,6 @@ export const metadata = {
   description: 'Sourcing, installing and repairing terrazzo, tile, stone, resilient flooring and luxury residential renovations across Mississauga and Ontario for over 25 years.',
 };
 
-export const revalidate = 0;
-
 export default function ServicesPage() {
   return (
     <main style={{ background: '#05080d', color: '#fff', minHeight: '100vh' }}>

@@ -10,8 +10,6 @@ import ConsultationBanner from '@/components/ConsultationBanner';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
-export const revalidate = 0;
-
 export default function HomePage() {
   return (
     <main>

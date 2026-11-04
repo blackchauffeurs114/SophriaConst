@@ -24,56 +24,6 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Sync drawer-open class to body and hide Roomvo widget when menu is open
-  useEffect(() => {
-    try {
-      if (drawerOpen) {
-        document.body.classList.add('drawer-open');
-      } else {
-        document.body.classList.remove('drawer-open');
-      }
-
-      const targets: HTMLElement[] = [];
-      const popupEl = document.getElementById('assistantPopup');
-      if (popupEl) targets.push(popupEl);
-      Array.from(document.querySelectorAll('iframe[src*="roomvo"], iframe[title*="Roomvo"], div[id*="roomvo"], div[class*="roomvo"], launch-sequence')).forEach(el => targets.push(el as HTMLElement));
-
-      targets.forEach((popup) => {
-        if (drawerOpen) {
-          popup.style.setProperty('opacity', '0', 'important');
-          popup.style.setProperty('visibility', 'hidden', 'important');
-          popup.style.setProperty('pointer-events', 'none', 'important');
-          popup.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
-          popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
-          popup.style.setProperty('z-index', '-9999', 'important');
-        } else {
-          if (!document.body.classList.contains('footer-active')) {
-            popup.style.setProperty('opacity', '1', 'important');
-            popup.style.setProperty('visibility', 'visible', 'important');
-            popup.style.setProperty('pointer-events', 'all', 'important');
-            popup.style.setProperty('transform', 'none', 'important');
-            popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease', 'important');
-            popup.style.setProperty('z-index', '2147483646', 'important');
-          }
-        }
-      });
-    } catch {
-      // Safe fallback
-    }
-
-    return () => {
-      document.body.classList.remove('drawer-open');
-    };
-  }, [drawerOpen]);
-
-  const handleDrawerToggle = (e: React.SyntheticEvent) => {
-    e.stopPropagation();
-    if (e.type === 'touchend') {
-      e.preventDefault();
-    }
-    setDrawerOpen(prev => !prev);
-  };
-
   return (
     <header className="re-site-header" id="site-header">
       <div className="re-pill-container">
@@ -85,18 +35,10 @@ export default function Header() {
           aria-label="Toggle navigation"
           aria-expanded={drawerOpen}
           aria-controls="mobileDrawer"
-          onClick={handleDrawerToggle}
-          onTouchEnd={handleDrawerToggle}
-          style={{
-            touchAction: 'manipulation',
-            cursor: 'pointer',
-            pointerEvents: 'auto',
-            zIndex: 100,
-            WebkitTapHighlightColor: 'transparent',
-          }}
+          onClick={() => setDrawerOpen(!drawerOpen)}
         >
-          <span className="re-menu-line" style={{ pointerEvents: 'none' }}></span>
-          <span className="re-menu-line" style={{ pointerEvents: 'none' }}></span>
+          <span className="re-menu-line"></span>
+          <span className="re-menu-line"></span>
         </button>
 
         {/* Desktop Nav Left */}
@@ -356,32 +298,12 @@ export default function Header() {
         <div className="re-pill-spacer" aria-hidden="true"></div>
       </div>
 
-      {/* Mobile Drawer with Accordion Dropdowns - Fully scrollable when open, completely invisible & non-blocking when closed */}
+      {/* Mobile Drawer with Accordion Dropdowns */}
       <nav
         className={`re-mobile-drawer ${drawerOpen ? 'open' : ''}`}
         id="mobileDrawer"
         aria-label="Mobile navigation"
-        style={
-          drawerOpen
-            ? {
-                display: 'block',
-                opacity: 1,
-                visibility: 'visible',
-                pointerEvents: 'auto',
-                zIndex: 2147483647,
-                maxHeight: 'calc(100vh - 96px)',
-                overflowY: 'auto',
-                WebkitOverflowScrolling: 'touch',
-                touchAction: 'pan-y',
-              }
-            : {
-                display: 'none',
-                opacity: 0,
-                visibility: 'hidden',
-                pointerEvents: 'none',
-                zIndex: -9999,
-              }
-        }
+        style={drawerOpen ? { display: 'block', opacity: 1, pointerEvents: 'auto' } : undefined}
       >
         <ul className="re-drawer-links">
           <li><Link href="/" onClick={() => setDrawerOpen(false)} className="active">Home</Link></li>
