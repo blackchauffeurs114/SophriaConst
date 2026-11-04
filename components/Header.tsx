@@ -24,46 +24,12 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Sync drawer-open class to body and directly control Roomvo widget visibility
+  // Sync drawer-open class to body so ScrollEffects handles Roomvo widget visibility cleanly
   useEffect(() => {
-    const hideRoomvoElements = (hide: boolean) => {
-      const elements: HTMLElement[] = [];
-      const popup = document.getElementById('assistantPopup');
-      if (popup) elements.push(popup);
-      const iframes = document.querySelectorAll<HTMLElement>('iframe[src*="roomvo"], iframe[title*="Roomvo"], iframe[aria-label*="Roomvo"]');
-      iframes.forEach((f) => { if (!elements.includes(f)) elements.push(f); });
-      const customEls = document.querySelectorAll<HTMLElement>('launch-sequence, [class*="roomvo"]');
-      customEls.forEach((l) => { if (!elements.includes(l)) elements.push(l); });
-
-      elements.forEach((el) => {
-        if (hide) {
-          el.style.setProperty('opacity', '0', 'important');
-          el.style.setProperty('visibility', 'hidden', 'important');
-          el.style.setProperty('pointer-events', 'none', 'important');
-          el.style.setProperty('transform', 'translateY(35px) scale(0.85)', 'important');
-          el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
-          el.style.setProperty('z-index', '-1', 'important');
-        } else {
-          // Check if at footer before restoring
-          const nearFooter = document.body.classList.contains('hide-roomvo');
-          if (!nearFooter) {
-            el.style.setProperty('opacity', '1', 'important');
-            el.style.setProperty('visibility', 'visible', 'important');
-            el.style.setProperty('pointer-events', 'all', 'important');
-            el.style.setProperty('transform', 'none', 'important');
-            el.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
-            el.style.setProperty('z-index', '2147483646', 'important');
-          }
-        }
-      });
-    };
-
     if (drawerOpen) {
       document.body.classList.add('drawer-open');
-      hideRoomvoElements(true);
     } else {
       document.body.classList.remove('drawer-open');
-      hideRoomvoElements(false);
     }
     return () => {
       document.body.classList.remove('drawer-open');

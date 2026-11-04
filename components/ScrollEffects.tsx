@@ -59,6 +59,8 @@ export default function ScrollEffects() {
     }
 
     // 3. MASTER ROOMVO AI CONTROLLER: Smooth footer fade & drawer hide
+    let lastHiddenState: boolean | null = null;
+
     const getRoomvoElements = (): HTMLElement[] => {
       const elements: HTMLElement[] = [];
       const popup = document.getElementById('assistantPopup');
@@ -70,7 +72,7 @@ export default function ScrollEffects() {
         if (!elements.includes(f)) elements.push(f);
       });
       const customEls = document.querySelectorAll<HTMLElement>(
-        'launch-sequence, [class*="roomvo"], [id*="roomvo"], [id*="Roomvo"]'
+        'launch-sequence, [class*="roomvo"]'
       );
       customEls.forEach((l) => {
         if (!elements.includes(l)) elements.push(l);
@@ -110,13 +112,19 @@ export default function ScrollEffects() {
       const nearFooter = isNearFooter();
       const shouldHide = isDrawerOpen || nearFooter;
 
-      if (nearFooter) {
+      // Only update body class if changed
+      if (nearFooter && !document.body.classList.contains('hide-roomvo')) {
         document.body.classList.add('hide-roomvo');
-      } else {
+      } else if (!nearFooter && document.body.classList.contains('hide-roomvo')) {
         document.body.classList.remove('hide-roomvo');
       }
 
+      // State guard: if state hasn't changed and elements exist, do nothing!
       const els = getRoomvoElements();
+      if (els.length === 0) return;
+      if (lastHiddenState === shouldHide) return;
+      lastHiddenState = shouldHide;
+
       els.forEach((el) => {
         if (shouldHide) {
           el.style.setProperty('opacity', '0', 'important');
@@ -148,23 +156,23 @@ export default function ScrollEffects() {
     window.addEventListener('scroll', syncRoomvoVisibility, { passive: true });
     window.addEventListener('resize', syncRoomvoVisibility, { passive: true });
 
-    // MutationObserver to watch for when Roomvo injects or body class changes
+    // MutationObserver only on direct body children and class attribute
     const mutationObserver = new MutationObserver(() => {
       syncRoomvoVisibility();
     });
 
     mutationObserver.observe(document.body, {
       childList: true,
-      subtree: true,
+      subtree: false,
       attributes: true,
       attributeFilter: ['class'],
     });
 
-    // Check periodically during first 15 seconds to ensure Roomvo is caught
-    const intervalId = setInterval(syncRoomvoVisibility, 400);
+    // Check periodically during first 10 seconds to ensure Roomvo is caught
+    const intervalId = setInterval(syncRoomvoVisibility, 500);
     const timeoutId = setTimeout(() => {
       clearInterval(intervalId);
-    }, 15000);
+    }, 10000);
 
     // Initial sync
     syncRoomvoVisibility();
