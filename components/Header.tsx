@@ -24,13 +24,40 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Sync drawer-open class to body so ScrollEffects handles Roomvo widget visibility cleanly
+  // Sync drawer-open class to body and hide Roomvo widget when menu is open
   useEffect(() => {
     if (drawerOpen) {
       document.body.classList.add('drawer-open');
     } else {
       document.body.classList.remove('drawer-open');
     }
+
+    const popup =
+      (document.getElementById('assistantPopup') as HTMLElement | null) ||
+      (document.querySelector('iframe[src*="roomvo"]') as HTMLElement | null);
+
+    if (popup) {
+      if (drawerOpen) {
+        popup.style.setProperty('opacity', '0', 'important');
+        popup.style.setProperty('visibility', 'hidden', 'important');
+        popup.style.setProperty('pointer-events', 'none', 'important');
+        popup.style.setProperty('transform', 'translateY(40px) scale(0.85)', 'important');
+        popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
+        popup.style.setProperty('z-index', '-1', 'important');
+      } else {
+        const footer = document.getElementById('site-footer');
+        const nearFooter = footer && (footer.getBoundingClientRect().top < window.innerHeight);
+        if (!nearFooter) {
+          popup.style.setProperty('opacity', '1', 'important');
+          popup.style.setProperty('visibility', 'visible', 'important');
+          popup.style.setProperty('pointer-events', 'all', 'important');
+          popup.style.setProperty('transform', 'none', 'important');
+          popup.style.setProperty('transition', 'opacity 0.35s ease, transform 0.35s ease', 'important');
+          popup.style.setProperty('z-index', '2147483646', 'important');
+        }
+      }
+    }
+
     return () => {
       document.body.classList.remove('drawer-open');
     };
